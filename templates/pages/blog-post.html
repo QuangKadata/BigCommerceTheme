@@ -1,0 +1,11 @@
+{{#partial "page"}}
+
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+{{#if settings.blog_enabled}}
+  {{> components/blog/post post=blog.post show_tags=true postURL=(encodeURI blog.post.url)}}
+{{else}}
+  <p class="t-c">Blogs are not published here</p>
+{{/if}}
+
+{{/partial}}
+{{> layout/base}}

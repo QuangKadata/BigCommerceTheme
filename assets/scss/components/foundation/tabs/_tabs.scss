@@ -1,0 +1,72 @@
+// =============================================================================
+// TABS (CSS)
+// =============================================================================
+//
+// Most of these styles deliberately reset Citadel's defaults for smaller
+// screens since the styles in Stencil for smaller screens are more persistent
+// across breakpoints.
+//
+// -----------------------------------------------------------------------------
+
+.tab {
+    float: none;
+
+    @include breakpoint("medium") {
+        border-top-color: $tab-title-border-color;
+        float: left;
+    }
+
+    &.is-active {
+      .tab-title {
+        background:  $theme-orange-color;
+        color: $theme-white-color;
+      }
+    }
+}
+
+.tab-title {
+      display: inline-block;
+      padding: 15px;
+      font-size: 14px;
+      color: $theme-black-color;
+      text-transform: uppercase;
+      font-weight: 500 !important;
+}
+
+
+/* ==:: tabs custom css ::==*/
+
+  .tabs.r-tabs-nav{
+    margin-bottom: 10px !important;
+  }
+
+.tab.r-tabs-tab{
+    &:after{
+      border: 10px solid transparent;
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      content: '';
+    }
+    .tab-title{
+      background:  $theme-orange-color;
+      color: $theme-white-color;
+    }
+}
+.tab.r-tabs-state-active{
+  &:after{
+    border-top-color: $theme-orange-color;
+  }
+}
+
+
+  .tabs.r-tabs-nav{
+    border-bottom: 1px solid $theme-orange-color;
+    .tab{
+      +
+      .tab{
+        margin-left: 10px;
+      }
+    }
+  }

@@ -1,0 +1,12 @@
+<div class="product-tab-section clearifx m-t-50" id="ProductTabs">
+    {{#if product.similar_by_views}}
+      <div class="section-title">
+        <h2 class="page-heading">{{lang 'products.similar_by_views'}}</h2>
+        {{#if theme_settings.CustomerViewSubTitle}}
+          <p class="section-sub-title">{{theme_settings.CustomerViewSubTitle}}</p>
+        {{/if}}
+      </div>
+        {{> components/products/carousel products=product.similar_by_views columns=6}}
+    {{/if}}
+
+</div>

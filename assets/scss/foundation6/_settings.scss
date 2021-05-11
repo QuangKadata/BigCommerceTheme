@@ -1,0 +1,60 @@
+@import 'util/util';
+
+// 1. Global
+// ---------
+
+$global-font-size: 14px;
+$global-width: rem-calc(1440);
+$global-lineheight: 1.5;
+$foundation-palette: (
+  primary: #1779ba,
+  secondary: #767676,
+  success: #3adb76,
+  warning: #ffae00,
+  alert: #cc4b37,
+);
+
+$body-antialiased: true;
+$global-margin: 1rem;
+$global-padding: 1rem;
+$global-weight-normal: normal;
+$global-weight-bold: bold;
+$global-radius: 0;
+$global-text-direction: ltr;
+$global-flexbox: false;
+$print-transparent-backgrounds: true;
+
+@include add-foundation-colors;
+
+// 2. Breakpoints
+// --------------
+
+$breakpoints: (
+  small: 0, /* 0 to 479 */
+  mob-small: 480, /* 480 to 567 */
+  mob-mid: 568,  /* 568 to 666 */
+  mob-large: 667, /* 768 to 1023 */
+  medium: 768px, /* 1024 to 1249 */
+  large: 1024px, /* 1250 than 1279 */
+  xlarge: 1280px, /* 1280 than 1439 */
+  xxlarge: 1470px, /* More than 1440 */
+
+);
+$print-breakpoint: large;
+$breakpoint-classes: (small mob-small mob-mid mob-large medium large xlarge xxlarge);
+
+// 3. The Grid
+// -----------
+
+$grid-row-width: $global-width;
+$grid-column-count: 12;
+$grid-column-gutter: (
+  small: 20px,
+  mob-mid: 20px,
+  medium: 20px,
+  large: 20px,
+  xlarge: 20px,
+  xxlarge: 30px,
+);
+$grid-column-align-edge: true;
+$block-grid-max: 8;

@@ -1,0 +1,39 @@
+// =============================================================================
+// GRID (CSS)
+// =============================================================================
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: $global-width;
+
+    /* ==================== MEDIA VIEW :: 1280 ==================== */
+    @include breakpoint(xlarge down) {
+        width: 1240px;
+    }
+    /* ==================== MEDIA VIEW :: 1024 ==================== */
+    @include breakpoint(large down) {
+        width: 980px;
+    }
+    /* ==================== MEDIA VIEW 768 ==================== */
+    @include breakpoint(medium down) {
+        width: 728px;
+    }
+    /* ==================== MEDIA VIEW 667 ==================== */
+    @include breakpoint(mob-large down) {
+        width: 94%;
+    }
+    /* ==================== MEDIA VIEW 568 ==================== */
+    @include breakpoint(mob-mid down) {
+        width: 92%;
+    }
+    /* ==================== MEDIA VIEW 480 ==================== */
+    @include breakpoint(mob-small down) {
+        width: 91%;
+    }
+    /* ==================== MEDIA VIEW 320 ==================== */
+    @include breakpoint(small down) {
+        width: 88%;
+    }
+}

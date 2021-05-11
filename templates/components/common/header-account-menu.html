@@ -1,0 +1,57 @@
+<li class="navUser-item navUser-item--account">
+    <a class="navUser-action needsclick" href="{{urls.account.index}}">
+      <i class="icon-user"></i>
+      <!-- <span>{{lang 'common.account'}}</span> -->
+    </a>
+    <ul class="navUser-section-sub section-sub-right">
+      {{#if customer}}
+        <li class="navUser-item">
+            <a class="navUser-action needsclick" href="{{urls.auth.logout}}">
+              <span>{{lang 'common.logout'}}</span>
+            </a>
+        </li>
+      {{else}}
+        <li class="navUser-item">
+          <a class="navUser-action needsclick" href="{{urls.auth.login}}">
+            <span>{{lang 'common.login'}}</span>
+          </a>
+        </li>
+        {{#if settings.account_creation_enabled}}
+        <li class="navUser-item">
+          <a class="navUser-action needsclick" href="{{urls.auth.create_account}}">
+            </i><span>{{lang 'common.sign_up'}}</span>
+          </a>
+        </li>
+        {{/if}}
+      {{/if}}
+      {{#if settings.gift_certificates_enabled}}
+          <li class="navUser-item">
+              <a class="navUser-action needsclick" href="{{urls.gift_certificate.purchase}}">
+              <span>{{lang 'common.gift_cert'}}</span>
+              </a>
+          </li>
+      {{/if}}
+      {{#if settings.show_wishlist}}
+        <li class="navUser-item">
+            <a class="navUser-action" href="{{urls.account.wishlists.all}}">
+              <span>{{#if customer.num_wishlists}}{{lang 'account.nav.wishlists' num_wishlists=customer.num_wishlists}}{{else}}{{lang 'account.nav.wishlists' num_wishlists='0'}}{{/if}}</span>
+            </a>
+        </li>
+      {{/if}}
+
+      {{#if customer.store_credit.value '>' 0}}
+          <li class="navUser-item navUser-item-storeCredit">
+              <a class="navUser-action navUser-action--storeCredit needsclick" href="{{urls.cart}}">
+                 <span>{{lang 'common.store_credit_overview' credit=customer.store_credit.formatted}}</span>
+              </a>            
+          </li>
+      {{/if}}
+    {{#if currency_selector.currencies.length '>' 1}}
+      <li class="navUser-item">
+        <div class="currency">
+          {{> components/common/currency-selector}}
+        </div>
+      </li>
+    {{/if}}
+    </ul>
+</li>

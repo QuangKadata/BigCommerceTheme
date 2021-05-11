@@ -1,0 +1,44 @@
+<nav class="navPages">
+  <ul class="navPages-list{{#if theme_settings.navigation_design '!==' 'simple'}} navPages-list-depth-max{{/if}} sf-menu" data-speed="0.8">
+    <li class="navPages-item navPages-home {{theme_settings.mega_menu}}">
+      <a class="navPages-action" href="{{urls.home}}" class="needsclick">Home</a>
+    </li>
+
+    {{#if theme_settings.headernavigation '==' "navcategory"}}
+        <li class="{{#if @last}}last-menu-item{{/if}}">
+            {{#each categories}}
+                  <li class="navPages-item">
+                    {{> components/common/navigation-list}}
+                  </li>
+            {{/each}}
+        </li>
+    {{/if}}
+
+
+    {{#if theme_settings.headernavigation '==' "navwebpage"}}
+      {{#each pages}}
+           <li class="navPages-item navPages-item-page {{#if @last}}last-menu-item{{/if}}">
+             {{> components/common/navigation-list}}
+           </li>
+       {{/each}}
+    {{/if}}
+
+    {{#if theme_settings.headernavigation '==' "navboth"}}
+      <li class="">
+        <a class="needsclick" href="/categories">shop all <span class="icon-arrow-1-down"></span></a>
+        <ul class="">
+          {{#each categories}}
+            <li class="navPages-item {{#and @last (if (length pages) '==' '0')}}last-menu-item{{/and}} nav-arrow-roted">
+              {{> components/common/navigation-list}}
+            </li>
+          {{/each}}
+        </ul>
+      </li>
+      {{#each pages}}
+           <li class="navPages-item navPages-item-page {{#if @last}}last-menu-item{{/if}}">
+             {{> components/common/navigation-list}}
+           </li>
+       {{/each}}
+    {{/if}}
+  </ul>
+</nav>

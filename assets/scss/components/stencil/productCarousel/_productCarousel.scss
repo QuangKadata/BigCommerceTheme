@@ -1,0 +1,31 @@
+// PRODUCT CAROUSEL
+// -----------------------------------------------------------------------------
+//
+// Purpose: Styles the product carousel component, which basically adds extras to the
+// vendor slick carousel, to specifically display product
+//
+// 1. If there's no JS layout the products out based on the grid.
+//
+// -----------------------------------------------------------------------------
+
+.productCarousel { // 1
+    @include grid-row(
+        $behavior: nest
+    );
+}
+.productCarousel-slide { // 1
+    @include grid-column(6);
+    width: 25%;
+    @include breakpoint(large down) {
+      width: 25%;
+    }
+    @include breakpoint(medium down){
+      width: 33.33%;
+    }
+    @include breakpoint(mob-mid down){
+      width: 50%;
+    }
+    .card {
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "normalStoreUrl": "https://brazanstore.com",
+  "accessToken": "jkztrw5oj79fnuvgip4jivtbmqspiou",
+  "port": "3000",
+  "customLayouts": {
+    "brand": {},
+    "category": {},
+    "page": {},
+    "product": {}
+  }
+}

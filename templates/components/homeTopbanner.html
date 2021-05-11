@@ -1,0 +1,62 @@
+
+
+  {{#or theme_settings.BannerImageFirst theme_settings.BannerImageSecond theme_settings.BannerImageThird theme_settings.BannerImageFour}}
+
+<div class="hometopbanner m-t-20">
+  <div class="custom-row">
+  {{#if theme_settings.BannerImageFirst}}
+    <div class="column large-4 medium-4 mob-large-4">
+      <div class="banner-1 banner-hover">
+        <a href="{{theme_settings.BannerLinkFirst}}">
+          <span>
+              <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="/product_images/uploaded_images/{{theme_settings.BannerImageFirst}}" alt="">
+          </span>
+        </a>
+      </div>
+    </div>
+  {{/if}}
+{{#or theme_settings.BannerImageSecond theme_settings.BannerImageThird}}
+    <div class="column large-4 medium-4 mob-large-4">
+      <div class="custom-row">
+        {{#if theme_settings.BannerImageSecond}}
+        <div class="column large-12 medium-12 mob-large-12">
+          <div class="banner-2 banner-hover">
+            <a href="{{theme_settings.BannerLinkSecond}}">
+              <span>
+                  <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="/product_images/uploaded_images/{{theme_settings.BannerImageSecond}}" alt="">
+              </span>
+            </a>
+          </div>
+        </div>
+        {{/if}}
+      </div>
+      <div class="custom-row">
+        {{#if theme_settings.BannerImageThird}}
+        <div class="column large-12 medium-12 mob-large-12">
+          <div class="banner-3 banner-hover">
+            <a href="{{theme_settings.BannerLinkThird}}">
+              <span>
+                <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="/product_images/uploaded_images/{{theme_settings.BannerImageThird}}" alt="">
+              </span>
+            </a>
+          </div>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+    {{/or}}
+  {{#if theme_settings.BannerImageFour}}
+    <div class="column large-4 medium-4 mob-large-4">
+      <div class="banner-4 banner-hover">
+        <a href="{{theme_settings.BannerLinkFour}}">
+          <span>
+            <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="/product_images/uploaded_images/{{theme_settings.BannerImageFour}}" alt="">
+          </span>
+        </a>
+      </div>
+    </div>
+    {{/if}}
+  </div>
+</div>
+
+{{/or}}

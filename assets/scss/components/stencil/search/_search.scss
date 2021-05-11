@@ -1,0 +1,131 @@
+// =============================================================================
+// SEARCH
+// =============================================================================
+
+.search-suggestion {
+margin-bottom: 20px;
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+.search-suggestion-brand{
+  margin-left: 20px;
+}
+
+.suggestion-title {
+    margin-top: 0;
+    text-transform: inherit;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.advancedSearch-form {
+    margin-bottom: spacing("double");
+
+    .form-row {
+        margin-bottom: -(spacing("single"));
+    }
+}
+
+.quickSearchResults {
+    margin-top: spacing("single");
+
+    @include breakpoint("medium") {
+        margin-top: 0;
+    }
+
+    .modal-close {
+        display: none;
+
+        @include breakpoint("medium") {
+            display: block;
+        }
+    }
+}
+
+.advancedSearch-separator {
+    display: none;
+}
+
+.advancedSearch-title {
+    margin: 0 0 spacing("single");
+    text-transform: inherit;
+}
+
+.search-price-range {
+    label {
+        display: inline;
+
+        // scss-lint:disable SelectorDepth, NestingDepth
+        input {
+            display: block;
+            padding-left: 10px;
+            padding-right: 10px;
+
+            @include breakpoint("small") {
+                display: inline;
+                width: 6rem;
+            }
+        }
+
+        // scss-lint:disable SelectorDepth, NestingDepth
+        span {
+          @include breakpoint(small down){
+            padding:0 10px;
+          }
+            @include breakpoint("small") {
+                display: inline;
+                padding-left: spacing("single");
+                padding-right: spacing("single");
+            }
+        }
+    }
+}
+
+.category-suggestion-list {
+    @include grid-row($behavior: "nest");
+    list-style-type: none;
+}
+
+.category-suggestion {
+    @include grid-column(4);
+    font-size: fontSize("smaller");
+    @include breakpoint(medium down){
+      width: 50%;
+    }
+    @include breakpoint(small down){
+      width: 100%;
+    }
+}
+
+.search-refine {
+    margin-left: spacing("single");
+}
+
+.quickSearchMessage {
+    font-size: fontSize("largest");
+    margin:0 0 0 0;
+    text-align: center;
+    padding: 20px;
+    line-height: 34px;
+    @include breakpoint(medium down){
+      font-size: 22px;
+      line-height: 24px;
+    }
+}
+
+.type-search{
+    @include breakpoint(mob-large small){
+      .page-content{
+        width: 100%;
+      }
+    }
+    .advancedSearch-form{
+      .form-column{
+        @include breakpoint(mob-mid down){
+          width: 100%;
+        }
+      }
+    }
+  }

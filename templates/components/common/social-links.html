@@ -1,0 +1,17 @@
+{{#if social_media}}
+    <ul class="socialLinks socialLinks--alt">
+        {{#each social_media}}
+            <li class="socialLinks-item">
+              {{#if display_name '===' 'google+'}}
+                  <a href="{{url}}" target="_blank">
+                      <span class="google-plus"></span>
+                  </a>
+              {{else}}
+                  <a href="{{url}}" target="_blank">
+                      <span class="{{display_name}}"></span>
+                  </a>
+              {{/if}}
+            </li>
+        {{/each}}
+    </ul>
+{{/if}}

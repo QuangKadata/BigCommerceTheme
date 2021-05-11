@@ -1,0 +1,7 @@
+<div data-animation-in="fadeIn" class="animated fadeIn heroCarousel-content{{#unless show_background}} heroCarousel-content--empty{{/unless}}">
+    <h2 class="heroCarousel-title animated slideInDown" data-animation-in="slideInDown">{{{heading}}}</h2>
+    <p class="heroCarousel-description animated slideInDown" data-animation-in="slideInDown">{{{text}}}</p>
+    {{#if button_text}}
+        <span data-animation-in="slideInDown" class="heroCarousel-action button btn-big animated slideInDown">{{button_text}}</span>
+    {{/if}}
+</div>

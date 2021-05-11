@@ -1,0 +1,23 @@
+
+{{#and theme_settings.instagramId theme_settings.instagramKey}}
+    <article class="instagrame m-b-50 clearfix" data-section-type="storeInfo">
+      <div class="section-title">
+        {{#if theme_settings.instagramtitle}}
+        <h2 class="page-heading"><span class="insta-black-logo"><svg class="footer-instalogo-icon"><use xlink:href="#icon-instagram-logo"></use></svg></span>
+          <span class="insta-black-name">{{theme_settings.instagramtitle}}</span></h2>
+          {{/if}}
+      </div>
+          <div class="home-instagram-blue align-center">
+              <div class="insta-block clearfix">
+                {{#and theme_settings.instagramId theme_settings.instagramKey}}
+                  <div id="instafeed" class=""
+                  data-id="{{theme_settings.instagramId}}"
+                  data-key="{{theme_settings.instagramKey}}"
+                  data-variation="{{theme_settings.instagramSectionStyle2}}"
+                  data-loading="{{cdn 'img/loading.svg'}}">
+                  </div>
+                {{/and}}
+            </div>
+          </div>
+    </article>
+{{/and}}

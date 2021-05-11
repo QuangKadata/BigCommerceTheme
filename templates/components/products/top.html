@@ -1,0 +1,9 @@
+<div class="clearfix">
+  <div class="section-title">
+    <h2 class="page-heading">{{lang 'products.top' }}</h2>
+    {{#if theme_settings.TopSubTitle}}
+      <p class="section-sub-title">{{theme_settings.TopSubTitle}}</p>
+    {{/if}}
+  </div>
+  {{> components/products/carousel products=products}}
+</div>

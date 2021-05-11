@@ -1,0 +1,207 @@
+<footer class="footer" role="contentinfo">
+    <a class="page-scroll-top" title="Click to Top" style="display:none;"><i class="icon-arrow-1-up"></i></a>
+{{#if theme_settings.show_usp '>=' 1}}
+      {{#if theme_settings.servicesSection '==' "ServiceStyle1"}}
+          {{#if theme_settings.servicesPosition '==' "bottomServicesection"}}
+            {{#if page_type '==' 'default'}}
+              {{> components/common/service-section }}
+            {{/if}}
+          {{/if}}
+
+          {{#and (if theme_settings.servicesFooter '==' "bottomServicesection")  (if page_type '!=' 'default')}}
+              {{#if page_type '!=' 'product'}}
+                <div class="usp-footer">
+                  {{> components/common/service-section }}
+                </div>
+              {{/if}}
+          {{/and}}
+
+
+          {{#if page_type '!=' 'default'}}
+              {{> components/common/service-section }}
+          {{/if}}
+        {{/if}}
+
+        {{#if theme_settings.servicesSection '==' "ServiceStyle2"}}
+            {{#if theme_settings.servicesPosition '==' "bottomServicesection"}}
+              {{#if page_type '==' 'default'}}
+                {{> components/common/service-section-blue }}
+              {{/if}}
+            {{/if}}
+
+            {{#and (if theme_settings.servicesFooter '==' "bottomServicesection")  (if page_type '!=' 'default')}}
+                {{#if page_type '!=' 'product'}}
+                  <div class="usp-footer">
+                    {{> components/common/service-section-blue }}
+                  </div>
+                {{/if}}
+            {{/and}}
+
+            {{#if page_type '!=' 'default'}}
+                {{> components/common/service-section-blue }}
+            {{/if}}
+          {{/if}}
+{{/if}}
+
+
+  <div class="footer-navigation-block">
+    <div class="container">
+
+      <!-- Instagrams Section -->
+      {{#if theme_settings.show_instaram}}
+        {{#if theme_settings.instagramSection "==" "instagramSectionStyle1"}}
+            {{#if page_type '==' 'default'}}
+                {{> components/common/instagram }}
+            {{/if}}
+
+            {{#if theme_settings.Inner_page_Instagram '==' "yes"}}
+              {{#if page_type '!=' 'default'}}
+                  {{> components/common/instagram }}
+              {{/if}}
+            {{/if}}
+        {{/if}}
+      {{/if}}
+
+
+      <div class="custom-row">
+        <div class="column xxlarge-3 large-3 medium-3 footer-store-info-block">
+          <article class="footer-col" data-section-type="storeInfo">
+              <h5 class="footer-info-heading">{{lang 'footer.contact'}}</h5>
+              {{#if settings.address}}
+              <p class="footer-address clearfix"><i class="icon-location-2"></i><span>{{nl2br settings.address}}</span></p>
+              {{/if}}
+
+              {{#if settings.phone_number}}
+                <p>
+                  <a href="tel:{{lang 'footer.call_us' phone_number=settings.phone_number}}" class="clearfix">
+                    <i class="icon-call-hold"></i><span>{{lang 'footer.call_us' phone_number=settings.phone_number}}</span>
+                  </a>
+                </p>
+              {{/if}}
+
+              {{#if theme_settings.FooterEmail}}
+                <p>
+                  <a href="mailto:{{theme_settings.FooterEmail}}" target="_top" class="clearfix email-id">
+                    <i class="icon-email"></i><span>{{theme_settings.FooterEmail}}</span>
+                  </a>
+                </p>
+              {{/if}}
+          </article>
+        </div>
+
+        <div class="column xlarge-3 large-2 medium-3">
+          <article class="footer-col" data-section-type="footer-webPages">
+              <h5 class="footer-info-heading footer-toggle-title">{{lang 'footer.navigate'}}
+                <i class="icon-arrow-1-down"></i>
+              </h5>
+              <div class="footer-toggle-content">
+                <ul class="footer-info-list">
+                    {{#each pages}}
+                        {{#if @index '<' '5' }}
+                            <li>
+                                <a href="{{url}}">{{name}}</a>
+                            </li>
+                        {{/if}}
+                    {{/each}}
+                    <li>
+                        <a href="{{urls.sitemap}}">{{lang 'sitemap.page_title'}}</a>
+                    </li>
+                </ul>
+              </div>
+          </article>
+        </div>
+
+        <div class="column xxlarge-3 large-2 medium-3">
+          <article class="footer-col" data-section-type="footer-categories">
+              <h5 class="footer-info-heading footer-toggle-title">{{lang 'footer.categories'}}
+                <i class="icon-arrow-1-down"></i>
+              </h5>
+              <div class="footer-toggle-content">
+                <ul class="footer-info-list">
+                  {{#each categories}}
+                    {{#if @index '<' '5' }}
+                      <li>
+                          <a href="{{url}}">{{name}}</a>
+                      </li>
+                    {{/if}}
+                  {{/each}}
+                  <li class="last-list">
+                      <a href="/categories">View all</a>
+                  </li>
+                </ul>
+              </div>
+          </article>
+        </div>
+
+        {{#and theme_settings.shop_by_brand_show_footer shop_by_brand.length}}
+        <div class="column xxlarge-2 large-2 medium-3">
+          <article class="footer-col" data-section-type="footer-brands">
+              <h5 class="footer-info-heading footer-toggle-title">{{lang 'footer.brands'}}
+                <i class="icon-arrow-1-down"></i>
+              </h5>
+              <div class="footer-toggle-content">
+                <ul class="footer-info-list">
+                    {{#each shop_by_brand}}
+                        {{#if @index '<' '5' }}
+                          <li>
+                              <a href="{{url}}">{{name}}</a>
+                          </li>
+                        {{/if}}
+                    {{/each}}
+                    <li class="last-list"><a href="{{urls.brands}}">{{lang 'common.view_all'}}</a></li>
+                </ul>
+              </div>
+          </article>
+        </div>
+        {{/and}}
+
+        <div class="column xxlarge-3 large-3 medium-12 newsletter-form">
+          <article class="" data-section-type="newsletterSubscription">
+              {{#if settings.show_newsletter_box}}
+                  {{> components/common/subscription-form}}
+              {{/if}}
+          </article>
+          <article class="footer-col clearfix social-block">
+              {{> components/common/social-links}}
+          </article>
+          {{#if theme_settings.geotrust_ssl_common_name}}
+              <div class="footer-geotrust-ssl-seal">
+                  {{> components/common/geotrust-ssl-seal}}
+              </div>
+          {{/if}}
+        </div>
+      </div>
+    </section>
+    </div>
+  </div>
+  <div class="footer-bottom-block">
+    <div class="container">
+      <div class="footer-bottom-block-inn">
+        <div class="custome-row clearfix">
+          <div class="columns large-4 medium-4 store_credit">
+            {{#if theme_settings.show_copyright_footer}}
+                <div class="footer-copyright psdcenter_cop">
+                    <p class="powered-by"><span class="theme-primary-color"> &copy; {{moment format="YYYY"}} {{settings.store_name}}</span></p>
+                </div>
+            {{/if}}
+            {{#if theme_settings.show_powered_by_bigcommerce}}
+              <div class="footer-copyright bigCommerce_cop">
+                <p class="powered-by">Powered by <a href="https://www.bigcommerce.com/?utm_source=merchant&amp;utm_medium=poweredbyBC" rel="nofollow" target="_blank">BigCommerce</a></p>
+              </div>
+            {{/if}}
+          </div>
+          <div class="columns large-4 medium-4">
+                {{> components/common/payment-icons}}
+          </div>
+          <div class="columns large-4 medium-4">
+            {{#if theme_settings.show_powered_by}}
+                <div class="footer-copyright powerby-right">
+                    <p class="powered-by">Premium BigCommerce Stencil Theme by <a href="https://themes.psdcenter.com/?utm_source=milanoTheme&utm_medium=themebyPSD" rel="nofollow" target="_blank">PSDCenter</a></p>
+                </div>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

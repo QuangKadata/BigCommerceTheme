@@ -1,0 +1,12 @@
+<div class="product-view-button">
+  <a href="#product-view-mode" class="product-view-btn grid-view view-button-grid" data-view-val="product-grid-view">
+     <span class=" icon-grid-squares-2"></span>
+   </a>
+   <a href="#product-view-mode" class="product-view-btn list-view view-button-list" data-view-val="product-list-style">
+     <span class="icon-list-1"></span>
+   </a>
+</div>
+
+<form class="actionBar" method="get" data-sort-by>
+    {{> components/category/sort-box sort=sort}}
+</form>

@@ -1,0 +1,473 @@
+.social-block{
+  margin-top: 30px;
+  @include breakpoint(xlarge down) {
+    margin-top: 20px;
+  }
+}
+
+.socialLinks {
+  text-align: center;
+}
+
+// Defual Variant Style
+
+.socialLinks-item{
+  margin-left: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  @include breakpoint(xlarge down) {
+    margin-left: 10px;
+  }
+  &:first-child{
+    margin-left: 0;
+  }
+  a{
+    display: inline-block;
+    &:hover{
+      .twitter{
+        background-position: -17px -48px;
+      }
+      .facebook{
+        background-position: 6px -48px;
+      }
+      .pinterest{
+        background-position: -40px -48px;
+      }
+      .youtube{
+        background-position: -65px -48px;
+      }
+      .instagram{
+        background-position: -89px -48px;
+      }
+      .google{
+        background-position: -105px -48px;
+      }
+      .rss{
+        background-position: -137px -48px;
+      }
+      .stumbleupon{
+        background-position: -233px -48px;
+      }
+      .tumblr{
+        background-position: -258px -48px;
+      }
+      .linkedin{
+        background-position: -161px -48px;
+      }
+      .google-plus{
+        background-position: -282px -48px;
+        width: 26px;
+      }
+    }
+  }
+  span{
+    width: 24px; height: 24px; text-align: center; line-height: 24px; color: $footer-font-color;
+    // background: $theme-light-black-color;
+     display: inline-block; vertical-align: middle;
+    position: relative;
+    background: url('../img/search-sprite-ic.png')no-repeat;
+  }
+    .twitter{
+      background-position: -17px top;
+    }
+    .facebook{
+      background-position: 6px top;
+    }
+    .pinterest{
+      background-position: -40px top;
+    }
+    .youtube{
+      background-position: -65px top;
+    }
+    .instagram{
+      background-position: -89px top;
+    }
+    .google{
+      background-position: -113px top;
+    }
+    .rss{
+      background-position: -137px top;
+    }
+    .stumbleupon{
+      background-position: -233px top;
+    }
+    .tumblr{
+      background-position: -258px top;
+    }
+    .linkedin{
+      background-position: -161px top;
+    }
+    .google-plus{
+      background-position: -282px top;
+      width: 26px;
+    }
+}
+
+.socialLinks-alt{
+  margin: 30px 0 20px 0; list-style: none;
+  li{
+    display: inline-block; vertical-align: middle; margin-left: 5px; position: relative;
+     overflow: hidden;width: auto; width: 34px;height: 34px; text-align: center;
+     @include breakpoint(small down){
+       width: 32px;
+       height: 32px;
+       line-height: 30px;
+     }
+    &:first-child{
+      margin-left: 0;
+      a{
+        width:26px;
+      }
+    }
+    a{
+      width: 34px; height: 34px; overflow: hidden;
+      display: inline-block; line-height: 31px;
+      @include breakpoint(small down){
+        width: 32px;
+        height: 32px;
+      }
+      &:hover{
+        .google-plus{
+           background-position: -282px top;
+         }
+         .facebook{
+           background-position: 6px top;
+         }
+         .envelope{
+           background-position: -185px top;
+         }
+         .print{
+           background-position: -209px top;
+         }
+         .twitter{
+           background-position: -17px top;
+         }
+         .linkedin{
+           background-position: -161px top;
+         }
+         .pinterest{
+           background-position: -40px top;
+         }
+         .google{
+           background-position: -113px top;
+         }
+      }
+    }
+   .google-plus{
+      background-position: -282px top;
+    }
+    .facebook{
+      background-position: 6px top;
+    }
+    .envelope{
+      background-position: -185px top;
+    }
+    .print{
+      background-position: -209px top;
+    }
+    .twitter{
+      background-position: -17px top;
+    }
+    .linkedin{
+      background-position: -161px top;
+    }
+    .pinterest{
+      background-position: -40px top;
+    }
+    .google{
+      background-position: -113px top;
+    }
+    // span{
+    //   &.fa{
+    //     width: 30px; height: 30px; line-height: 30px; text-align: center; color: $theme-white-color;
+    //   }
+    //   &.fa-facebook{ background: #48659f; }
+    //   &.fa-twitter{ background: #21a8ec; }
+    //   &.fa-pinterest{ background: #c62626; }
+    //   &.fa-google{ background: #E04D2B; }
+    //   &.fa-youtube{ background: #DA2723; }
+    //   &.fa-linkedin{ background: #0083BE; }
+    //   &.fa-instagram{ background: #569DC8; }
+    //   &.fa-tumblr{ background: #395976; }
+    //   &.fa-stumbleupon{ background: #EB4B23; }
+    //   &.fa-rss{ background: #F8991D; }
+    //   &.fa-envelope{ background: #21a8ec; }
+    //   &.fa-print{ background: #FE6601; }
+    //
+    //   &:hover{
+    //     opacity: 0.8;
+    //   }
+    // }
+
+    .google_plusone_iframe_widget{
+      position: absolute; top: 0; left: 0; opacity: 0; text-align: left; height: 100% !important;
+      span{
+        display: block;
+      }
+    }
+    .pin_it_iframe_widget{
+      position: absolute; top: 3px; left: 0; opacity: 0;
+    }
+    &.socialLinks-item--facebook_like{
+      display: none;
+    }
+    &:hover{
+      opacity: 0.5;
+    }
+  }
+
+  .socialLinks-item--google_plusone, .socialLinks-item--google{
+    background: #E04D2B;
+  }
+  .socialLinks-item--facebook{
+    background: #48659f;
+  }
+  .socialLinks-item--email{
+    background: #21a8ec;
+  }
+  .socialLinks-item--print{
+    background: #FE6601;
+  }
+  .socialLinks-item--twitter{
+    background: #21a8ec;
+  }
+  .socialLinks-item--linkedin{
+    background: #0083BE;
+  }
+  .socialLinks-item--facebook_like{
+    background: #48659f;
+  }
+  .socialLinks-item--pinterest{
+    background: #c62626;
+  }
+  a{
+    margin: 0 !important; width: auto; height: auto;
+  }
+}
+
+// Blue Variant style
+
+.milano-layout--Blue{
+  .socialLinks-item{
+    margin-left: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    @include breakpoint(xlarge down) {
+      margin-left: 10px;
+    }
+    &:first-child{
+      margin-left: 0;
+    }
+    a{
+      display: inline-block;
+      &:hover{
+        .twitter{
+          background-position: -17px -48px;
+        }
+        .facebook{
+          background-position: 6px -48px;
+        }
+        .pinterest{
+          background-position: -40px -47px;
+        }
+        .youtube{
+          background-position: -65px -47px;
+        }
+        .instagram{
+          background-position: -89px -47px;
+        }
+        .google{
+          background-position: -105px -47px;
+        }
+        .rss{
+          background-position: -137px -47px;
+        }
+        .stumbleupon{
+          background-position: -233px -48px;
+        }
+        .tumblr{
+          background-position: -258px -48px;
+        }
+        .linkedin{
+          background-position: -161px -48px;
+        }
+        .google-plus{
+          background-position: -282px -47px;
+          width: 26px;
+        }
+      }
+    }
+    span{
+      width: 24px; height: 24px; text-align: center; line-height: 24px; color: $footer-font-color;
+      // background: $theme-light-black-color;
+       display: inline-block; vertical-align: middle;
+      position: relative;
+      background: url('../img/search-sprite-ic.png')no-repeat;
+    }
+      .twitter{
+        background-position: -17px -24px;
+      }
+      .facebook{
+        background-position: 6px -24px;
+      }
+      .pinterest{
+        background-position: -40px -23px;
+      }
+      .youtube{
+        background-position: -65px -23px;
+      }
+      .instagram{
+        background-position: -89px -23px;
+      }
+      .google{
+        background-position: -105px -24px;
+      }
+      .rss{
+        background-position: -137px -23px;
+      }
+      .stumbleupon{
+        background-position: -233px -24px;
+      }
+      .tumblr{
+        background-position: -258px -24px;
+      }
+      .linkedin{
+        background-position: -161px -24px;
+      }
+      .google-plus{
+        background-position: -282px -23px;
+        width: 26px;
+      }
+  }
+
+  .socialLinks-alt{
+    margin: 30px 0 20px 0; list-style: none;
+    li{
+      display: inline-block; vertical-align: middle; margin-left: 5px; position: relative;
+       overflow: hidden;width: auto; width: 34px;height: 34px; text-align: center;
+       @include breakpoint(small down){
+         width: 32px;
+         height: 32px;
+         line-height: 30px;
+       }
+      &:first-child{
+        margin-left: 0;
+        a{
+          width:26px;
+        }
+      }
+      a{
+        width: 34px; height: 34px; overflow: hidden;
+        display: inline-block; line-height: 31px;
+        @include breakpoint(small down){
+          width: 32px;
+          height: 32px;
+        }
+        &:hover{
+          .google-plus{
+             background-position: -282px top;
+           }
+           .facebook{
+             background-position: 6px top;
+           }
+           .envelope{
+             background-position: -185px top;
+           }
+           .print{
+             background-position: -209px top;
+           }
+           .twitter{
+             background-position: -17px top;
+           }
+           .linkedin{
+             background-position: -161px top;
+           }
+           .pinterest{
+             background-position: -40px top;
+           }
+        }
+      }
+     .google-plus{
+        background-position: -282px top;
+      }
+      .facebook{
+        background-position: 6px top;
+      }
+      .envelope{
+        background-position: -185px top;
+      }
+      .print{
+        background-position: -209px top;
+      }
+      .twitter{
+        background-position: -17px top;
+      }
+      .linkedin{
+        background-position: -161px top;
+      }
+      .pinterest{
+        background-position: -40px top;
+      }
+
+      .google_plusone_iframe_widget{
+        position: absolute; top: 0; left: 0; opacity: 0; text-align: left; height: 100% !important;
+        span{
+          display: block;
+        }
+      }
+      .pin_it_iframe_widget{
+        position: absolute; top: 3px; left: 0; opacity: 0;
+      }
+      &.socialLinks-item--facebook_like{
+        display: none;
+      }
+      &:hover{
+        opacity: 0.5;
+      }
+    }
+
+    .socialLinks-item--google_plusone, .socialLinks-item--google{
+      background: #E04D2B;
+    }
+    .socialLinks-item--facebook{
+      background: #48659f;
+    }
+    .socialLinks-item--email{
+      background: #21a8ec;
+    }
+    .socialLinks-item--print{
+      background: #FE6601;
+    }
+    .socialLinks-item--twitter{
+      background: #21a8ec;
+    }
+    .socialLinks-item--linkedin{
+      background: #0083BE;
+    }
+    .socialLinks-item--facebook_like{
+      background: #48659f;
+    }
+    .socialLinks-item--pinterest{
+      background: #c62626;
+    }
+    a{
+      margin: 0 !important; width: auto; height: auto;
+    }
+  }
+}
+
+
+li.facebook_like{
+  height: auto !important;
+  margin-left:  0px;
+  margin-top: 20px;
+}
+.addthis_button_facebook_like{
+ text-align: left;
+}
+
+li.socialLinks-alt.facebook_like{
+  height: auto !important;
+  margin-left:  0px;
+  margin-top: 20px;
+}

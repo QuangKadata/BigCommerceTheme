@@ -1,0 +1,34 @@
+<div class="headerMain apply-sticky">
+<header class="header {{#if carousel.slides}}h-h-p{{/if}}" role="banner">
+  {{#if theme_settings.EnablePencilBanner}}
+    {{> components/common/pencil-banner}}
+  {{/if}}
+
+    <div class="{{#if theme_settings.headerWidth '==' 'headerStyle1'}}header-wrapper{{/if}} {{#if theme_settings.headerWidth '==' 'headerStyle2'}}container{{/if}} {{#if theme_settings.headerWidth '==' 'headerStyle2'}}Blue-Navigation{{/if}}">
+      <div class="custom-row">
+        <div class="display-table clearfix">
+          <div class="column xlarge-2 large-2 medium-6 mob-large-6 mob-mid-6 mob-small-6 small-5">
+            {{#if page_type '===' 'default'}}
+                <div class="header-logo header-logo--{{theme_settings.logo-position}}">
+                    {{> components/common/store-logo}}
+                </div>
+            {{else}}
+                <div class="header-logo header-logo--{{theme_settings.logo-position}}">
+                    {{> components/common/store-logo}}
+                </div>
+            {{/if}}
+          </div>
+          <div class="column xlarge-8 large-8 medium-6 mob-large-6 navigation-menu-section">
+            {{{region name="header_bottom"}}}
+            <div class="navigation-menu" data-menu>
+                {{> components/common/navigation-menu}}
+            </div>
+          </div>
+          <div class="column xlarge-2 large-2 medium-6 mob-large-6 mob-mid-6 mob-small-6 small-7">
+            {{> components/common/navigation}}
+          </div>
+        </div>
+      </div>
+    </div>
+</header>
+</div>

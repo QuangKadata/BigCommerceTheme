@@ -1,0 +1,140 @@
+$stencil-primary-color:   stencilColor("stencil-primary-color");
+$theme-orange-color: $stencil-primary-color;
+
+$pencil-banner-bg: stencilColor("pencil-banner-bg");
+
+/* ==================== THEME VARIABLE ==================== */
+
+$theme-base-font-size: 14px;
+$theme-base-font-family:  stencilFontFamily("body-font");
+$theme-base-title-font-family:  stencilFontFamily("headings-font");
+$Hero-Carousel-Font: stencilFontFamily("Hero-Carousel-Font");
+
+$font-weight-300: 300;
+$font-weight-400: 400;
+$font-weight-500: 500;
+$font-weight-600: 600;
+$font-weight-700: 700;
+$font-weight-800: 800;
+
+@if $theme-base-font-family == 'Roboto' {
+    $font-weight-500: 500;
+  } @else if $theme-base-font-family == "Muli" {
+    $font-weight-500: 500;
+  } @else if $theme-base-font-family == "Noto Sans" {
+    $font-weight-500: 500;
+  } @else if $theme-base-font-family == "Work Sans" {
+    $font-weight-500: 500;
+  } @else {
+    $font-weight-500: 500;
+  }
+
+  @if $theme-base-title-font-family == 'Roboto' {
+      $font-weight-500: 500;
+    } @else if $theme-base-font-family == "Muli" {
+      $font-weight-500: 700;
+    } @else if $theme-base-font-family == "Noto Sans" {
+      $font-weight-500: 700;
+    } @else if $theme-base-font-family == "Work Sans" {
+      $font-weight-500: 600;
+    } @else if $theme-base-font-family == "Roboto Slab"{
+      $font-weight-500: 700;
+    }
+
+
+$theme-body-font-color: #222222;
+$theme-body-dark-font-color: #222222;
+$theme-body-grey-color: #8a8a8a;
+
+$theme-primary-color: $stencil-primary-color;
+$theme-primary-light-color:#666666;
+$theme-secondary-color: #ff7800;
+
+$theme-body-link-color: $theme-body-font-color;
+$theme-body-link-hover-color: $stencil-primary-color;
+
+$icon-ratingEmpty: stencilColor("icon-ratingEmpty");
+$icon-ratingFull: stencilColor("icon-ratingFull");
+$theme-white-light-color:#cccccc;
+$theme-extra-grey-color: #777777;
+$theme-light-grey-color: #f6f6f6;
+$theme-product-bg-grey-color: #f8f8f8;
+$theme-title-line-color:#888888;
+$theme-grey-color: #f2f2f2;
+$theme-semi-dark-grey-color: #dddddd;
+$theme-dark-grey-color: #9b9b9b;
+$theme-price-color:#999999;
+
+$theme-input-error-color:#cc4749;
+
+$theme-newslatter-input-bg-color:stencilColor("theme-newslatter-input-bg-color");
+$theme-newslatter-button-bg-color:stencilColor("theme-newslatter-button-bg-color");
+$theme-newslatter-button-color:stencilColor("theme-newslatter-button-color");
+$theme-newslatter-button-color-hover:stencilColor("theme-newslatter-button-color-hover");
+
+$theme-grey-border-color: #e6e6e6;
+
+$theme-white-color: #ffffff;
+$theme-red-color: #df4949;
+$theme-card-border-color:#e1e1e1;
+
+$theme-black-color: #000000;
+$theme-black-light-color: #333333;
+$theme-light-black-color: #343538;
+
+
+$theme-border-color: #e8e8e8;
+$theme-semi-border-color: #cccccc;
+$theme-dark-border-color: #ddd;
+$theme-light-border-color: #eeeeee;
+
+$navUser-color: stencilColor("navUser-color");
+$navUser-color-hover: $stencil-primary-color;
+$header-backgroundColor: stencilColor("header-backgroundColor");
+
+$footer-font-color: stencilColor("footer-font-color");
+$footer-font-hover-color: stencilColor("footer-font-hover-color");
+$footer-info-heading-color: stencilColor("footer-info-heading-color");
+$footer-bar-backgroundColor:stencilColor("footer-bar-backgroundColor");
+$footer-payment-icon-color:stencilColor("footer-payment-icon-color");
+
+$color_badge_product_sale_badges: $stencil-primary-color;
+$color_text_product_sale_badges: $theme-black-color;
+$color_hover_product_sale_badges: $stencil-primary-color;
+
+$SlideOneheading:stencilColor("SlideOneheading");
+$SlideTwoheading:stencilColor("SlideTwoheading");
+$SlideThreeheading:stencilColor("SlideThreeheading");
+$SlideFourheading:stencilColor("SlideFourheading");
+$SlideFiveheading:stencilColor("SlideFiveheading");
+
+$SlideOnetext:stencilColor("SlideOnetext");
+$SlideTwotext:stencilColor("SlideTwotext");
+$SlideThreetext:stencilColor("SlideThreetext");
+$SlideFourtext:stencilColor("SlideFourtext");
+$SlideFivetext:stencilColor("SlideFivetext");
+
+$SlideOneButton:stencilColor("SlideOneButton");
+$SlideTwoButton:stencilColor("SlideTwoButton");
+$SlideThreeButton:stencilColor("SlideThreeButton");
+$SlideFourButton:stencilColor("SlideFourButton");
+$SlideFiveButton:stencilColor("SlideFiveButton");
+
+$SlideOneButtonHover:stencilColor("SlideOneButtonHover");
+$SlideTwoButtonHover:stencilColor("SlideTwoButtonHover");
+$SlideThreeButtonHover:stencilColor("SlideThreeButtonHover");
+$SlideFourButtonHover:stencilColor("SlideFourButtonHover");
+$SlideFiveButtonHover:stencilColor("SlideFiveButtonHover");
+
+
+@mixin border-radius($radius) {
+-webkit-border-radius: $radius;
+-moz-border-radius: $radius;
+border-radius: $radius;
+}
+
+@mixin box-shadow($shadow) {
+-webkit-box-shadow: $shadow;
+-moz-box-shadow: $shadow;
+box-shadow: $shadow;
+}

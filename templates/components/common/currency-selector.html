@@ -1,0 +1,26 @@
+<ul class="navUser-section">
+    {{#if currency_selector.currencies.length '>' 1}}
+
+      <li class="navUser-item">
+          <a class="navUser-action has-dropdown" href="javascript:void(0)" data-dropdown="currencySelection" aria-controls="currencySelection" aria-expanded="false">
+            <span>{{lang 'common.currency' code=currency_selector.active_currency_code}}</span>
+          </a>
+      </li>
+    {{/if}}
+</ul>
+
+<ul class="currencyOption clearfix">
+{{#each currency_selector.currencies}}
+<li>
+      {{#if is_active}}
+        <a class="active" title="{{name}}" href="{{{switch_url}}}">
+          {{{flag}}}
+        </a>
+      {{else}}
+        <a href="{{{switch_url}}}" title="{{name}}">
+          {{{flag}}}
+        </a>
+      {{/if}}
+</li>
+{{/each}}
+</ul>

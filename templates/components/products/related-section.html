@@ -1,0 +1,35 @@
+{{#if product.related_products}}
+  <div class="related-product">
+    <div class="related-desktop">
+      <div class="product-view-related-tital">
+        <h2>{{lang 'products.related_products'}}</h2>
+      </div>
+      <div class="related-product-inn">
+        {{#each (limit product.related_products 5)}}
+          <div class="product-card">
+            {{>components/products/card-related relateditems="related" theme_settings=../theme_settings show_rating=../settings.show_product_rating}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+
+    <div class="related-mobile">
+      <div class="product-view-related-tital-mobile">
+        <div class="section-title">
+          <h2 class="page-heading">{{lang 'products.related_products'}}</h2>
+          {{#if theme_settings.RelatedSubTitle}}
+            <p class="section-sub-title">{{theme_settings.RelatedSubTitle}}</p>
+          {{/if}}
+        </div>
+      </div>
+      <section class="relatedProductInn productCarousel" data-slick-apply>
+        {{#each product.related_products}}
+          <div class="productCarousel-slide">
+            {{>components/products/card relateditems="related" theme_settings=../theme_settings show_rating=../settings.show_product_rating}}
+          </div>
+        {{/each}}
+      </section>
+    </div>
+    
+  </div>
+{{/if}}

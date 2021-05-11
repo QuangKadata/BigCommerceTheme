@@ -1,0 +1,58 @@
+
+
+{{#or theme_settings.BannerImageFirst theme_settings.BannerImageSecond theme_settings.BannerImageThird theme_settings.BannerImageFour}}
+<div class="Home-top-banner-blue {{#if carousel.slides}}m-t-30{{/if}} m-t-20">
+  <div class="Container clearfix">
+    <div class="Home-top-banner-left">
+      {{#if theme_settings.BannerImageFirst}}
+      <div class="banner-1">
+        <div class="banner-hover">
+          <a href="{{theme_settings.BannerLinkFirst}}">
+            <span>
+                <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="/product_images/uploaded_images/{{theme_settings.BannerImageFirst}}" alt="">
+            </span>
+          </a>
+        </div>
+      </div>
+      {{/if}}
+      <div class="Home-top-banner-left-inn">
+        {{#if theme_settings.BannerImageSecond}}
+        <div class="banner-2">
+          <div class="banner-hover">
+            <a href="{{theme_settings.BannerLinkSecond}}">
+              <span>
+                  <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="/product_images/uploaded_images/{{theme_settings.BannerImageSecond}}" alt="">
+              </span>
+            </a>
+          </div>
+        </div>
+        {{/if}}
+        {{#if theme_settings.BannerImageThird}}
+        <div class="banner-3">
+          <div class="banner-hover">
+            <a href="{{theme_settings.BannerLinkThird}}">
+              <span>
+                <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="/product_images/uploaded_images/{{theme_settings.BannerImageThird}}" alt="">
+              </span>
+            </a>
+          </div>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+    <div class="Home-top-banner-right">
+      {{#if theme_settings.BannerImageFour}}
+      <div class="banner-4">
+        <div class="banner-hover">
+          <a href="{{theme_settings.BannerLinkFour}}">
+            <span>
+              <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="/product_images/uploaded_images/{{theme_settings.BannerImageFour}}" alt="">
+            </span>
+          </a>
+        </div>
+      </div>
+      {{/if}}
+    </div>
+  </div>
+</div>
+{{/or}}

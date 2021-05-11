@@ -1,0 +1,26 @@
+---
+blog:
+    posts:
+        limit: 5
+        pages: 3
+        summary: 200
+---
+{{#partial "page"}}
+
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+<h1 class="page-heading">{{ blog.name }}</h1>
+<main class="page">
+  <div class="columns">
+    {{#if settings.blog_enabled}}
+      {{#each blog.posts}}
+          {{> components/blog/post post=this settings=../settings postURL=(encodeURI url)}}
+      {{/each}}
+      {{> components/common/paginator pagination.blog}}
+    {{else}}
+      <p class="t-c common-text">blogs are not published here</p>
+    {{/if}}
+  </div>
+</main>
+
+{{/partial}}
+{{> layout/base}}

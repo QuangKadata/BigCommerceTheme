@@ -1,0 +1,15 @@
+
+{{#if page}}
+<div class="sidebarBlock">
+  <h5 class="sidebarBlock-heading sidebar-toggle-title">{{ page.title }}
+    <div class="accordion-navigation-actions">
+        <i class="icon-arrow-1-down"></i>
+    </div>
+  </h5>
+  <ul class="navList navList-treeview sidebar-toggle-content">
+    {{#each page.sub_pages}}
+        <li class="navList-item"><a class="navList-action" href="{{url}}">{{title}}</a></li>
+    {{/each}}
+  </ul>
+</div>
+{{/if}}

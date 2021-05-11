@@ -1,0 +1,117 @@
+<div class="{{#if theme_settings.servicesPosition '==' "bottomServicesection"}}usp-section-blue p-t-20 p-b-20{{/if}} {{#if theme_settings.servicesPosition '==' "topServicesection"}}s-m-t{{/if}}">
+  <div class="container">
+    <div class="service-wrap">
+          <div class="custom-row">
+            {{#if theme_settings.show_usp '>=' 1}}
+
+            <div class="column large-3 medium-3 mob-large-6 mob-mid-6 mob-small-6 small-6 one">
+              <div class="service-banner-item">
+
+              {{#if theme_settings.ServiceImageFirst}}
+                <div class="service-banner-img">
+                  <div class="service-banner-img-inn">
+                    <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="/product_images/uploaded_images/{{theme_settings.ServiceImageFirst}}" alt="" />
+                  </div>
+                </div>
+              {{/if}}
+
+                <div class="service-banner-detail">
+
+                  {{#if theme_settings.ServiceTitleFirst}}
+                    <h4>{{theme_settings.ServiceTitleFirst}}</h4>
+                  {{/if}}
+
+                  {{#if theme_settings.ServiceTextFirst}}
+                    <span>{{theme_settings.ServiceTextFirst}}</span>
+                  {{/if}}
+
+                </div>
+              </div>
+            </div>
+          {{/if}}
+
+          {{#if theme_settings.show_usp '>=' 2}}
+            <div class="column large-3 medium-3 mob-large-6 mob-mid-6 mob-small-6 small-6 two">
+              <div class="service-banner-item">
+
+                {{#if theme_settings.ServiceImageSecond}}
+                  <div class="service-banner-img">
+                    <div class="service-banner-img-inn">
+                      <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="/product_images/uploaded_images/{{theme_settings.ServiceImageSecond}}" alt="" />
+                    </div>
+                  </div>
+                {{/if}}
+
+                <div class="service-banner-detail">
+
+                  {{#if theme_settings.ServiceTitleSecond}}
+                    <h4>{{theme_settings.ServiceTitleSecond}}</h4>
+                  {{/if}}
+
+                  {{#if theme_settings.ServiceTextSecond}}
+                    <span>{{theme_settings.ServiceTextSecond}}</span>
+                  {{/if}}
+
+                </div>
+              </div>
+            </div>
+            {{/if}}
+
+            {{#if theme_settings.show_usp '>=' 3}}
+
+            <div class="column large-3 medium-3 mob-large-6 mob-mid-6 mob-small-6 small-6 three">
+              <div class="service-banner-item">
+
+                {{#if theme_settings.ServiceImageThird}}
+                  <div class="service-banner-img">
+                    <div class="service-banner-img-inn">
+                        <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="/product_images/uploaded_images/{{theme_settings.ServiceImageThird}}" alt="" />
+                    </div>
+                  </div>
+                {{/if}}
+
+                <div class="service-banner-detail">
+                  {{#if theme_settings.ServiceTitleThird}}
+                    <h4>{{theme_settings.ServiceTitleThird}}</h4>
+                  {{/if}}
+
+                  {{#if theme_settings.ServiceTextThird}}
+                    <span>{{theme_settings.ServiceTextThird}}</span>
+                  {{/if}}
+                </div>
+              </div>
+            </div>
+
+          {{/if}}
+
+          {{#if theme_settings.show_usp '>=' 4}}
+
+            <div class="column large-3 medium-3 mob-large-6 mob-mid-6 mob-small-6 small-6 four">
+              <div class="service-banner-item">
+
+                {{#if theme_settings.ServiceImageFour}}
+                  <div class="service-banner-img">
+                    <div class="service-banner-img-inn">
+                        <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="/product_images/uploaded_images/{{theme_settings.ServiceImageFour}}" alt="" />
+                    </div>
+                  </div>
+                {{/if}}
+
+                <div class="service-banner-detail">
+
+                  {{#if theme_settings.ServiceTitleFour}}
+                    <h4>{{theme_settings.ServiceTitleFour}}</h4>
+                  {{/if}}
+
+                  {{#if theme_settings.ServiceTextFour}}
+                    <span>{{theme_settings.ServiceTextFour}}</span>
+                  {{/if}}
+
+                </div>
+              </div>
+            </div>
+            {{/if}}
+          </div>
+    </div>
+  </div>
+</div>

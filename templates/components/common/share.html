@@ -1,0 +1,69 @@
+{{#if settings.add_this.buttons}}
+    <div class="addthis_toolbox" addthis:url="{{url}}"
+         addthis:title="{{title}}">
+        <ul class="socialLinks-alt">
+            {{#each settings.add_this.buttons}}
+                <li class="socialLinks-item socialLinks-item-alt socialLinks-item--{{service}}">
+                    <a class="addthis_button_{{service}} icon icon--{{service}}" {{{annotation}}}>
+                        {{#if service '===' 'facebook'}}
+                          <span class="facebook"></span>
+                        {{/if}}
+
+                        {{#if service '===' 'twitter'}}
+                            <span class="twitter"></span>
+                        {{/if}}
+
+                        {{#if service '===' 'pinterest'}}
+                          <span class="pinterest"></span>
+                        {{/if}}
+
+                        {{#if service '===' 'linkedin'}}
+                            <span class="linkedin"></span>
+                        {{/if}}
+
+                        {{#if service '===' 'google_plusone'}}
+                            <!-- No custom icons allowed with g+ -->
+                            <span class="google-plus"></span>
+                        {{/if}}
+
+                        {{#if service '===' 'google'}}
+                            <span class="google"></span>
+                        {{/if}}
+
+                        {{#if service '===' 'email'}}
+                          <span class="envelope"></span>
+                        {{/if}}
+
+                        {{#if service '===' 'print'}}
+                          <span class="print"></span>
+                        {{/if}}
+
+
+                    </a>
+                </li>
+            {{/each}}
+
+            {{#inArray (arrayify (pluck (limit settings.add_this.buttons 20) 'service')) 'facebook_like'}}
+                {{#each settings.add_this.buttons}}
+                    {{#if service '==' 'facebook_like'}}
+                    <li class="{{service}}" style="display: inline-block;width: 100%;height: 100px; ">
+                        <div class="addthis_button_{{service}} icon icon--{{service}}" style="width: 100%;
+                        height: 100%; text-align:center;" {{{annotation}}}>
+                              <iframe src="https://www.facebook.com/plugins/like.php?href={{../../postURL}}&width=450&layout=standard&action=like&size=small&show_faces=true&share=false&height=80&appId" width="400" height="20" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                        </div>
+                    </li>
+                    {{/if}}
+                {{/each}}
+            {{/inArray}}
+
+        </ul>
+
+        <script type="text/javascript"
+                src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4e94ed470ee51e32"></script>
+        <script>
+            if (typeof(addthis) === "object") {
+                addthis.toolbox('.addthis_toolbox');
+            }
+        </script>
+    </div>
+{{/if}}

@@ -1,0 +1,8 @@
+<div class="section-title">
+  <h2 class="page-heading">{{lang 'products.new' }}</h2>
+  {{#if theme_settings.NewSubTitle}}
+    <p class="section-sub-title">{{theme_settings.NewSubTitle}}</p>
+  {{/if}}
+</div>
+
+{{> components/products/carousel products=products}}

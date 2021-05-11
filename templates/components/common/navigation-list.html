@@ -1,0 +1,49 @@
+<!-- SECOND LEVEL STARTS -->
+{{#if children}}
+<a href="{{url}}" class="needsclick">
+    {{name}}
+    <span class="icon-arrow-1-down"></span>
+</a>
+<ul class="navlist-sub nav-second-level">
+    {{#each children}}
+    <li>
+        <!-- THIRD LEVEL STARTS -->
+        {{#if children}}
+        <a href="{{url}}" class="needsclick">
+            {{name}} <span class="icon-arrow-1-right"></span>
+        </a>
+        <ul class="navlist-sub nav-third-level">
+            {{#each children}}
+            <li>
+
+              <!-- FOURTH LEVEL STARTS -->
+              {{#if children}}
+              <a href="{{url}}" class="needsclick">
+                  {{name}} <span class="icon-arrow-1-right"></span>
+              </a>
+              <ul class="navlist-sub nav-third-level">
+                  {{#each children}}
+                  <li>
+                      <a href="{{url}}" class="needsclick">{{name}} </a>
+                  </li>
+                  {{/each}}
+              </ul>
+              {{else}}
+                <a href="{{url}}" class="needsclick">{{name}}</a>
+              {{/if}}
+              <!-- FOURTH LEVEL STARTS -->
+
+            </li>
+            {{/each}}
+        </ul>
+        {{else}}
+        <a href="{{url}}" class="needsclick">{{name}}</a>
+        {{/if}}
+        <!-- THIRD LEVEL STARTS -->
+    </li>
+    {{/each}}
+</ul>
+{{else}}
+<a href="{{url}}">{{name}}</a>
+{{/if}}
+<!-- SECOND LEVEL ENDS -->

@@ -1,0 +1,9 @@
+{{#if children}}
+    <a class="navPages-action needsclick" href="{{url}}">
+        {{name}}
+        <i class="icon-arrow-1-right"></i>
+    </a>
+    {{> components/common/navigation-dropdown}}
+{{else}}
+    <a class="navPages-action needsclick" href="{{url}}">{{name}}</a>
+{{/if}}

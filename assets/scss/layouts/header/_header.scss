@@ -1,0 +1,1545 @@
+// =============================================================================
+// HEADER (CSS)
+//
+// 1. Setting font size of header-logo to 0, since wrapper element may vary, and
+//    inline-block whitespace messes with header height. Font-size is reset to
+//    appropriate size on header-logo-text.
+// 2. Needs left/right margin so it doesn't cover left/right nav bar toggles
+// 3. Offset the letter-spacing on the last character by adding a right negative
+//    margin. This centers the text logo properly.
+// 4. When the word "cart" is added to the mobile header's cart link, add more
+//    margin to compensate.
+//
+// -----------------------------------------------------------------------------
+
+/* ==================== HEDAR STYLE START ==================== */
+
+header{
+  ul, ol{
+    margin: 0; list-style: none;
+  }
+}
+.type-default{
+  .header{
+    border: none;
+    @include breakpoint(mob-mid down){
+      margin-bottom: 0px;
+    }
+  }
+}
+.type-default.milano-layout--Blue{
+  .body.header-top-shadow{
+    position: relative;
+    &:before{
+      background: rgba(0,0,0,0.25);
+      background: -moz-linear-gradient(top, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 100%);
+      background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0.25)), color-stop(100%, rgba(0,0,0,0)));
+      background: -webkit-linear-gradient(top, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 100%);
+      background: -o-linear-gradient(top, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 100%);
+      background: -ms-linear-gradient(top, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 100%);
+      background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
+      position: absolute;
+      content: "";
+      top: 0;
+      height: 207px;
+      width: 100%;
+      z-index: 1;
+      @include breakpoint(medium down){
+        height: 120px;
+      }
+      @include breakpoint(small down){
+        height: 80px;
+      }
+    }
+  }
+  .header.h-h-p{
+    background: none;
+    @include breakpoint(medium down){
+      background: $stencil-primary-color;
+    }
+  }
+  .stuck.header.h-h-p{
+    background: $stencil-primary-color;
+  }
+}
+.milano-layout--Blue{
+  .header{
+    background: $stencil-primary-color;
+  }
+}
+.stuck{
+  .pencil-banner{
+    display: none;
+    }
+}
+.milano-layout--Blue {
+  .blue-close{
+    display: block; right: 0; top: 12px;
+  }
+  .pencil-banner{
+    span{
+      padding: 9px; padding-right: 15px; font-size: 14px; line-height: 22px;
+      @include breakpoint(medium down){
+        padding: 6px 12px; font-size: 12px;
+      }
+      @include breakpoint(small down){
+        font-size: 10px; padding: 4px 0; padding-right: 20px;
+      }
+      a{
+        color: $theme-white-color; border-bottom: 1px solid $theme-white-color;
+        &:hover{
+          color: $stencil-primary-color; border-bottom: 1px solid $stencil-primary-color;
+        }
+      }
+    }
+    .control-close-btn{
+      top: 8px;
+      @include breakpoint(small down){
+        top: 4px;
+      }
+    }
+  }
+}
+.pencil-banner{
+    background: $pencil-banner-bg; text-align: center;
+      span{
+        color: $theme-white-light-color; font-size: 13px; font-weight: 300; padding: 5px 0; display: block; padding-right: 15px;
+        @include breakpoint(small down){
+          font-size: 11px;
+        }
+        a{
+          color: $theme-primary-color; text-transform: capitalize;
+        }
+      }
+  .control-close-btn{
+    position: absolute; top: 3px; right: 18px;
+    i{
+      color: $theme-white-color; font-weight: bold;  font-size: 10px;
+    }
+    &:hover{
+      i{
+        color: $theme-primary-color;
+      }
+    }
+    @include breakpoint(small down){
+      top: 4px;
+    }
+  }
+  .blue-close{
+    display: none;
+  }
+}
+.header {
+  position: relative; z-index: 20; border-bottom: 1px solid rgba(150,150,150,0.3); -webkit-animation-duration: .7s;
+  animation-duration: .7s;
+  @include breakpoint(mob-mid down){
+    margin-bottom: 20px;
+  }
+    &.is-open {
+        height: 100%;
+        @include breakpoint("medium") {
+            height: auto;
+        }
+    }
+    .header-wrapper{
+      padding: 0px 70px;
+      @include breakpoint(xlarge down) {
+        padding: 0px 20px;
+      }
+      @include breakpoint(small down) {
+        padding: 0px 15px;
+      }
+    }
+}
+.type-default.milano-layout--Blue{
+  .h-h-p{
+    .Blue-Navigation{
+      .custom-row{
+       position: absolute; width: 100%; margin: 0 auto;
+       @include breakpoint(medium down){
+         position: inherit;
+         @include grid-row(
+             $behavior: nest
+         );
+       }
+     }
+   }
+  }
+}
+.display-table{
+  display: table;
+  width: 100%;
+  .column{
+    display: table-cell; vertical-align: middle; float: none;
+  }
+  .column:last-child:not(:first-child), .columns:last-child:not(:first-child){
+    float:none;
+  }
+}
+.header-logo{
+  display: inline-block; padding: 10px 0;
+  @include breakpoint(small down) {
+    width: 100%; float: none; text-align: left;
+  }
+  a{
+    display: inline-block; vertical-align: middle; color: $storeName-color;
+  }
+}
+.header-logo-text{
+  text-transform: uppercase; font-weight: 600; font-family: $theme-base-title-font-family; font-size: 30px; line-height: 36px; color: $storeName-color;
+}
+.header-logo-image {
+    @include breakpoint("medium") {
+        max-height: none;
+    }
+}
+// stick css -------------------------------------------------------------------
+.stuck {
+    background: $theme-white-color; position: fixed; top: 0; left: 0; width: 100%;
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.3);
+    -webkit-animation-fill-mode: both; animation-fill-mode: both; -webkit-animation-name: bounceInDown;
+    animation-name: bounceInDown;
+    border-top: 2px solid $theme-primary-color !important; z-index: 101;
+      @include breakpoint(medium down){
+        border-top: 0px !important;
+      }
+    .dropdown--quickSearch.is-open{
+      height: 100vh;
+    }
+    .header-logo{
+      display: none;
+      @include breakpoint(medium down){
+        display: block;
+      }
+    }
+    .navUser{
+      display: none;
+      @include breakpoint(medium down){
+        display: block;
+      }
+    }
+    .navigation-menu{
+      .navPages{
+        > ul{
+          margin-top: 15px;
+          > li{
+           >  a{
+              padding: 15px 0; padding-top: 0px;
+              &:before{
+                top: 20%;
+              }
+            }
+          }
+        }
+      }
+    }
+}
+.disable-scroll{
+  overflow: hidden;
+}
+@keyframes bounceInDown {
+    0%, 60%, 75%, 90%, to {
+        animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+    }
+    0% {
+      opacity: 0;
+      transform: translate3d(0, -100px, 0)
+    }
+    90% {
+      transform: none
+    }
+    to {
+      transform: none
+    }
+}
+// header middle css -----------------------------------------------------------
+.navigation-menu{
+  .navPages{
+    > ul{
+       > li{
+          > a{
+              position: relative;
+              &:hover{
+                i{
+                  color: $theme-primary-color;
+                }
+              }
+          }
+          &:hover{
+          >  a{
+              opacity: 1;
+            }
+          }
+          &.sfHover{
+            > a{
+              opacity: 1;
+            }
+          }
+          &.ActivePage{
+            > a{
+              opacity: 1;
+            }
+          }
+       }
+     }
+  }
+}
+.dropdown--quickSearch{
+    background: rgba($theme-white-color, 0.95); width: 100%; position: fixed; top: 0 !important; height: 100vh;
+    -webkit-transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1); right: 0; left: 100%;
+    @include breakpoint(large down) {
+      -webkit-transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+      transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    @include breakpoint(mob-large down) {
+      padding: 20px; display: table;
+    }
+    .close{
+      position: absolute; top: 50px; right: 50px;
+      @include breakpoint(mob-large down) {
+        top: 20px; right: 20px;
+      }
+
+      .close-icon{
+        display: block;
+        i{
+          font-size: 35px; color: $theme-primary-color;
+          @include breakpoint(medium down) {
+            font-size: 25px;
+          }
+          @include breakpoint(mob-mid down) {
+            font-size: 18px;
+          }
+        }
+        &:hover{
+          i{
+            color: $theme-body-font-color;
+          }
+        }
+      }
+    }
+    form{
+      width: 50%; margin: 0 auto; margin-top: 100px;
+      @include breakpoint(xlarge down){
+        width: 70%;
+      }
+      @include breakpoint(large down){
+        width: 70%; margin-top: 70px;
+      }
+      @include breakpoint(medium down) {
+        margin-top: 50px; width: 100%;
+      }
+      @include breakpoint(mob-mid down) {
+        margin-top: 20px;
+      }
+    }
+    fieldset{
+      padding: 0px; border: none; border-bottom: 2px solid $theme-primary-color; margin: 0px; position: relative;
+      .form-input{
+        background: none;
+        border: none;
+        padding: 0px;
+        line-height: 40px;
+        font-size: 20px;
+        text-transform: capitalize;
+        &:-webkit-input-placeholder {opacity:1; font-size: 22px !important;
+          @include breakpoint(mob-large down) {
+            font-size: 14px !important;
+          }
+        }
+        &:-moz-placeholder {opacity:1; font-size: 22px !important;
+          @include breakpoint(mob-large down) {
+            font-size: 14px !important;
+          }
+        }
+        &:-ms-input-placeholder {opacity:1; font-size: 22px !important;
+          @include breakpoint(mob-large down) {
+            font-size: 14px !important;
+          }
+        }
+        &:-moz-placeholder {opacity:1; font-size: 22px !important;
+          @include breakpoint(mob-large down) {
+            font-size: 14px !important;
+          }
+        }
+        @include breakpoint(mob-large down) {
+          font-size: 16px;
+        }
+        @include breakpoint(mob-small down) {
+          line-height: 34px;
+          height: 34px;
+        }
+      }
+      span{
+        display: none;
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        line-height: 20px;
+        text-align: center;
+        right: 15px;
+        top: 50%;
+        margin-top: -10px;
+        font-weight: bold;
+        cursor: pointer;
+        @include breakpoint(mob-large down) {
+          display: block;
+        }
+        @include breakpoint(small down) {
+          right: 10px;
+        }
+        &:hover{
+          color: $theme-primary-color;
+        }
+      }
+      .submitbtn{
+        display: none;
+      }
+    }
+}
+.milano-layout--Blue.type-default{
+    .quickSearchResults{
+      .card{
+        margin-bottom: 0px;
+      }
+    }
+}
+.milano-layout--Blue{
+  .navigation-menu{
+    .navPages{
+      > ul{
+         > li{
+            > a{
+                position: relative;
+                &:hover{
+                  i{
+                    color: $theme-primary-color;
+                  }
+                }
+            }
+            &:hover{
+            >  a{
+                opacity: 0.8;
+              }
+            }
+            &.sfHover{
+              > a{
+                opacity: 0.8;
+              }
+            }
+            &.ActivePage{
+              > a{
+                opacity: 0.8;
+              }
+            }
+         }
+       }
+    }
+  }
+  .quickSearchResults{
+    .card{
+      background: $theme-white-color;
+      display: flex;
+      vertical-align: middle;
+      width: 100%;
+      @include breakpoint(small down){
+        display: block;
+      }
+      .card-inner{
+        border: 0px;
+        padding: 0px;
+      }
+      .card-figure{
+        margin: 0px;
+        width: 10%;
+        float: left;
+        display: block;
+        vertical-align: middle;
+        @include breakpoint(medium down){
+          width: 30%;
+        }
+        @include breakpoint(small down){
+          width: 25%;
+          margin-right: 10px;
+        }
+        .sale-flag-side{
+          display: none;
+        }
+      }
+      .card-body{
+        overflow: hidden;
+        padding:10px 20px;
+        display:block;
+        float: right;
+        vertical-align: middle;
+        text-align: left;
+        width: 90%;
+        position: relative;
+         @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+           display: block;
+         }
+         @include breakpoint(medium down){
+           width: 70%;
+         }
+        @include breakpoint(small down) {
+           padding:0 5px;
+           text-align: left;
+           width: 70%;
+        }
+        .brandName{
+          .card-text{
+            margin: 0px;
+          }
+        }
+        .card-title{
+          position: relative;
+          z-index: 10;
+          width: 50%;
+          margin: 0px;
+          line-height: 17px;
+          @include breakpoint(medium down) {
+            width: 100%;
+          }
+        }
+        .card-price{
+          margin-top: 0px;
+          margin-bottom: 5px;
+          text-align: left;
+          .price-section{
+            font-size: 13px;
+            .price.price--rrp{
+              font-size: 13px;
+            }
+          }
+          .price-name-label{
+            display: none;
+          }
+        }
+        .card-btn{
+          opacity: 1;
+          visibility: visible;
+          position: absolute;
+          top: 10px;
+          transform: none;
+          left: inherit;
+          right: 20px;
+          text-align: right;
+          bottom: auto;
+          z-index: 1;
+             @include breakpoint(large down) {
+               top:40px;
+             }
+             @include breakpoint(medium down) {
+               top:50px;
+               position: inherit;
+               top: auto;
+               text-align: left;
+               right: auto;
+               margin-top:10px;
+               padding-left: 0px;
+             }
+          a{
+            margin-top: 0px;
+            padding: 8px 13px;
+            line-height: 16px;
+            font-size: 12px;
+            background: none;
+            border: 1px solid $theme-primary-color;
+            color: $theme-primary-color;
+            &:hover{
+              border-color: $theme-primary-color;
+              background: $theme-primary-color;
+              color: $theme-white-color;
+            }
+            @include breakpoint(mob-mid down) {
+              padding: 8px 10px;
+              line-height: 12px;
+            }
+          }
+        }
+      }
+      &:hover{
+        .card-inner{
+          box-shadow: none;
+          border: 0px;
+          padding: 0px;
+          &:after{
+            display: none;
+          }
+        }
+        .card-price{
+          .price-section{
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+        .card-figcaption{
+          display: none;
+        }
+        .card-body .card-btn{
+          top: 10px;
+          transition: none;
+          bottom: auto;
+        }
+        .card-body{
+          .card-btn{
+            a{
+              &:hover{
+                background: $stencil-primary-color;
+              }
+            }
+          }
+        }
+      }
+    }
+    .card--alternate{
+      border: 0px;
+      padding: 0px;
+      margin: 0px;
+    }
+  }
+}
+.milano-layout--Blue{
+  .quickSearchResults{
+    .productGrid{
+      margin: 0px;
+    }
+  }
+}
+.quickSearchResults{
+  padding-top: 10px;
+  width: 50%;
+  margin: 0 auto;
+  background: $theme-white-color;
+  @include breakpoint(xlarge down) {
+    width: 70%;
+  }
+  @include breakpoint(medium down) {
+    width: 100%;
+  }
+  .modal-close{
+    display: none;
+  }
+  .productGrid{
+    padding:20px;
+    overflow-y: auto;
+    max-height: 410px;
+    width: 100%;
+    @include breakpoint(xlarge down) {
+      max-height: 395px;
+    }
+    @include breakpoint(medium down) {
+      max-height: 50vh;
+      min-height: 50px;
+      padding-top: 0;
+    }
+    .product{
+      width: 100%;
+      padding: 0px;
+      border-bottom: 1px solid $theme-border-color;
+      margin-top: 15px;
+      padding-bottom: 15px;
+      &:first-child{
+        margin-top: 0px;
+      }
+      &:last-child{
+        border-bottom: 0px;
+        padding-bottom: 0px;
+      }
+      @include breakpoint(small down) {
+        padding-top: 10px;
+        &:first-child{
+          padding-top: 0px;
+        }
+      }
+    }
+  }
+  .card{
+    background: $theme-white-color;
+    display: flex;
+    vertical-align: middle;
+    width: 100%;
+    @include breakpoint(small down){
+      display: block;
+    }
+    .card-inner{
+      width: 100%;
+      display: block;
+    }
+    .card-figure{
+      margin: 0px;
+      width: 10%;
+      float: left;
+      @include breakpoint(medium down){
+        width: 30%;
+      }
+      @include breakpoint(small down){
+        width: 25%;
+        margin-right: 10px;
+      }
+      .sale-flag-side{
+        display: none;
+      }
+    }
+    .card-body{
+      overflow: hidden;
+      padding:10px 20px;
+      float: right;
+      text-align: left;
+      width: 90%;
+       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+         display: block;
+       }
+       @include breakpoint(medium down){
+         width: 70%;
+       }
+      @include breakpoint(small down) {
+         padding:0 5px;
+         text-align: left;
+         width: 70%;
+      }
+      .card-title{
+        position: relative;
+        z-index: 10;
+        width: 50%;
+        @include breakpoint(medium down) {
+          width: 100%;
+        }
+      }
+      .card-price{
+        margin-top: 10px;
+        .price-now-label{
+          display: none;
+        }
+        .price-section{
+          .price.price--rrp{
+            line-height: 18px;
+          }
+        }
+      }
+      .card-btn{
+        opacity: 1;
+        visibility: visible;
+        position: absolute;
+        top: 10px;
+        transform: none;
+        left: inherit;
+        right: 20px;
+        text-align: right;
+           @include breakpoint(large down) {
+             top:40px;
+           }
+           @include breakpoint(medium down) {
+             top:50px;
+             position: inherit;
+             top: auto;
+             text-align: left;
+             right: auto;
+             margin-top:10px;
+             padding-left: 0px;
+           }
+        a{
+          margin-top: 0px;
+          padding: 8px 13px;
+          line-height: 16px;
+          font-size: 12px;
+          border: 1px solid $theme-primary-color;
+          &:hover{
+            border-color: $theme-primary-color;
+            background: $theme-primary-color;
+            color: $theme-white-color;
+          }
+          @include breakpoint(mob-mid down) {
+            padding: 8px 10px;
+            line-height: 12px;
+          }
+        }
+      }
+    }
+    &:hover{
+      .card-price{
+        .price-section{
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+      .card-figcaption{
+        display: none;
+      }
+    }
+  }
+  .card--alternate{
+    border: 0px;
+    padding: 0px;
+  }
+  .view-all-btn{
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 10px;
+    .view-all{
+      margin: 0px;
+      width: 100%;
+    }
+  }
+  /* width */
+  ::-webkit-scrollbar {
+      width: 5px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+      background: $theme-grey-color;
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+      background: $theme-primary-color;
+      width: 8px;
+  }
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+      background: $theme-primary-color;
+  }
+}
+.navigation-menu-section{
+  @include breakpoint(medium down) {
+    display: none !important;
+  }
+}
+.navigation-menu{
+  .navPages{
+    max-width: 100%;
+    ul{
+      li{
+         a{
+            font-size: 14px;
+            font-weight: $font-weight-500;
+            letter-spacing: 1px;
+            color: $navUser-color;
+            line-height: 1;
+            text-transform: uppercase;
+            padding: 25px 0px;
+            margin: 0 20px;
+            letter-spacing: 0.025em;
+            padding-top: 0px;
+            @include breakpoint(xlarge down) {
+              margin: 0 10px;
+            }
+            @include breakpoint(large down) {
+              margin: 0 8px;
+            }
+            span, i{
+              font-size: 10px;
+              margin-left: 4px;
+              font-weight: bold;
+            }
+            &:hover{
+              color: $theme-body-font-color;
+              span, i{
+                color: $theme-body-font-color;
+              }
+            }
+          }
+      }
+      >  li{
+        &:hover{
+         >  a{
+            color: $theme-primary-color;
+            span, i{
+              color: $theme-primary-color;
+            }
+          }
+        }
+      }
+      ul{
+        padding: 10px 0;
+        background: #ffffff;
+        li{
+          a{
+            font-size: 13px;
+            display: block;
+            text-transform: uppercase;
+            font-weight: 400;
+            letter-spacing: 0;
+            float: none;
+            padding: 10px 10px 10px 10px;
+            margin: 0 8px;
+            line-height: 18px;
+            color: $navUser-color;
+             span, i{
+               float: right;
+               font-size: 10px;
+             }
+          }
+        }
+      }
+    }
+    > ul{
+      margin-top: 25px;
+    }
+  }
+}
+.type-default.milano-layout--Blue{
+  .navigation-menu{
+    .navPages{
+    >  ul{
+      >  li{
+         >  a{
+            color: $theme-white-color;
+            &:hover{
+              opacity: 0.8;
+              color: $theme-white-color;
+            }
+            span{
+              color: $theme-white-color;
+            }
+          }
+          &:hover{
+          >  a{
+              color: $theme-white-color;
+              &:hover{
+                opacity: 0.8;
+                > span{
+                  opacity: 0.8;
+                  color: $theme-white-color;
+                }
+              }
+            }
+          }
+           &.sfHover{
+            > a{
+              opacity: 0.8;
+              color: $theme-white-color;
+              > span{
+                opacity: 0.8;
+                color: $theme-white-color;
+              }
+            }
+          }
+          &.ActivePage{
+            > a{
+              opacity: 0.8;
+              color: $theme-white-color;
+              > span{
+                opacity: 0.8;
+                color: $theme-white-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .navUser{
+    .navUser-item{
+      .navUser-action{
+        i{
+          color: $theme-white-color;
+          &:hover{
+            opacity: 0.8;
+            color: $theme-white-color;
+          }
+        }
+      }
+    }
+    .desktop_mobile_menu{
+      .control-otherlinks{
+        span{
+          border-top:2px solid $theme-white-color;
+          &:hover{
+            border-top:2px solid $theme-white-color;
+            opacity: 0.8;
+          }
+        }
+        &:hover{
+          span{
+            border-top:2px solid $theme-white-color;
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+  .header.stuck{
+    .navigation-menu{
+      .navPages{
+      >  ul{
+        >  li{
+           >  a{
+              color: $theme-white-color;
+              &:hover{
+                color: $theme-white-color;
+                span{
+                  color: $theme-black-color;
+                }
+              }
+            }
+            &.sfHover{
+              > a{
+                opacity: 0.8;
+                color: $theme-white-color;
+                > span{
+                  opacity: 0.8;
+                  color: $theme-white-color;
+                }
+              }
+            }
+            &.ActivePage{
+              > a{
+                opacity: 0.8;
+                color: $theme-white-color;
+                > span{
+                  opacity: 0.8;
+                  color: $theme-white-color;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .navUser{
+      .navUser-item{
+        .navUser-action{
+          i{
+            color: $theme-white-color;
+            &:hover{
+              color: $theme-black-color;
+            }
+          }
+        }
+      }
+      .desktop_mobile_menu{
+        .control-otherlinks{
+          span{
+            border-top:2px solid $theme-white-color;
+            &:hover{
+              border-top:2px solid $theme-black-color;
+            }
+          }
+          &:hover{
+            span{
+              border-top:2px solid $theme-black-color;
+            }
+          }
+        }
+      }
+    }
+    .Blue-Navigation{
+      .custom-row{
+        position: inherit;
+      }
+    }
+  }
+}
+.milano-layout--Blue{
+  .navigation-menu{
+    .navPages{
+    >  ul{
+      >  li{
+         >  a{
+            color: $theme-white-color;
+            font-size: 15px;
+            font-weight: 400;
+            &:hover{
+              color: $theme-black-color;
+            }
+          }
+          &:hover{
+           > a{
+              &:hover{
+                &:before{
+                  background: $theme-black-color;
+                  width: 100%;
+                }
+                span{
+                  color: $theme-black-color;
+                }
+              }
+            }
+          }
+          &.sfHover{
+            > a{
+              opacity: 0.8;
+              > span{
+                opacity: 0.8;
+              }
+            }
+          }
+          &.ActivePage{
+            > a{
+              opacity: 0.8;
+              > span{
+                opacity: 0.8;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .navUser{
+    .navUser-item{
+      .navUser-action{
+        i{
+          color: $theme-white-color;
+          &:hover{
+            color: $theme-black-color;
+          }
+        }
+      }
+    }
+    .desktop_mobile_menu{
+      .control-otherlinks{
+        span{
+          border-top:2px solid $theme-white-color;
+          &:hover{
+            border-top:2px solid $theme-black-color;
+          }
+        }
+        &:hover{
+          span{
+            border-top:2px solid $theme-black-color;
+          }
+        }
+      }
+    }
+  }
+  .header.stuck{
+    .navigation-menu{
+      .navPages{
+      >  ul{
+        >  li{
+           >  a{
+              color: $theme-white-color;
+              &:before{
+                background: $theme-black-color;
+              }
+              &:hover{
+                color: $theme-black-color;
+                span{
+                  color: $theme-black-color;
+                }
+              }
+            }
+            &.ActivePage{
+              > a{
+                opacity: 0.8;
+                > span{
+                  opacity: 0.8;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .navUser{
+      .navUser-item{
+        .navUser-action{
+          i{
+            color: $theme-white-color;
+            &:hover{
+              color: $theme-black-color;
+            }
+          }
+        }
+      }
+      .desktop_mobile_menu{
+        .control-otherlinks{
+          span{
+            border-top:2px solid $theme-white-color;
+            &:hover{
+              border-top:2px solid $theme-black-color;
+            }
+          }
+          &:hover{
+            span{
+              border-top:2px solid $theme-black-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// header right side css -------------------------------------------------------
+.type-default.milano-layout--Blue{
+  .stuck{
+    .navUser .navUser-item .navUser-action .countPill{
+      @include breakpoint(medium down) {
+        background: $theme-white-color;
+        color: $stencil-primary-color;
+      }
+    }
+  }
+  .h-h-p{
+    .Blue-Navigation{
+      .navUser-item--cart{
+        .dropdown-menu{
+          .custom-row{
+            position: inherit;
+            margin: 0px;
+            width: auto;
+            margin-left: -1.07143rem;
+            margin-right: -1.07143rem;
+          }
+        }
+      }
+    }
+  }
+}
+.milano-layout--Blue{
+  .navUser .navUser-item .navUser-action .countPill{
+    background: $theme-white-color;
+    color: $theme-orange-color;
+  }
+}
+.navUser{
+  text-align: right;
+  .navUser-item{
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 0 25px;
+    position: relative;
+    @include breakpoint(xlarge down) {
+      margin: 0 0 0 13px;
+    }
+    @include breakpoint(large down) {
+      margin: 0 0 0 11px;
+    }
+    @include breakpoint(small down) {
+      margin: 0 0 0 10px;
+    }
+    .navUser-action{
+      position: relative;
+      padding:17px 0px;
+      .countPill{
+        background: $theme-orange-color;
+        color: $theme-white-color;
+        position: absolute;
+        top: 10px;
+        left: 7px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        font-size: 10px;
+        line-height: 15px;
+        font-weight: 400;
+        @include breakpoint(small down){
+          margin-left: 0px;
+        }
+      }
+      i{
+        font-size: 18px;
+        line-height: 29px;
+        font-weight: bold;
+        @include breakpoint(large down) {
+          font-size: 16px;
+          line-height: 25px;
+        }
+      }
+    }
+    &:first-child{
+      margin-left: 0px;
+    }
+  }
+  .desktop_mobile_menu{
+    margin: 0px 0 0 10px;
+    @include breakpoint(xlarge down) {
+      margin:0 0 0 8px;
+    }
+    @include breakpoint(large down) {
+      margin:0 0 0 4px;
+    }
+    .control-otherlinks{
+      display: inline-block;
+      width: 35px;
+      height: 21px;
+      position: relative;
+      text-align: right;
+      cursor: pointer;
+      margin-top: 7px;
+      @include breakpoint(large down) {
+        width: 30px;
+        margin-top: 3px;
+      }
+      span{
+        width: 75%;
+        right: 0;
+        top: 2px;
+        border-top: 2px solid $theme-body-font-color;
+        position: absolute;
+        -webkit-transition: all 500ms;
+        -moz-transition: all 500ms;
+        -ms-transition: all 500ms;
+        -o-transition: all 500ms;
+        transition: all 500ms;
+        @include breakpoint(small down) {
+          width: 85%;
+        }
+      }
+      .otherlinks-line-2{
+        top: 10px;
+        width: 50%;
+        @include breakpoint(small down) {
+          width: 60%;
+        }
+      }
+      .otherlinks-line-3{
+        top: 18px;
+        width: 60%;
+        @include breakpoint(small down) {
+          width: 80%;
+        }
+      }
+      &:hover{
+        span{
+          width: 85%;
+          border-top: 2px solid $theme-orange-color;
+          @include breakpoint(small down) {
+            width: 100%;
+          }
+        }
+        .otherlinks-line-2{
+          top: 10px;
+          width: 75%;
+          border-top: 2px solid $theme-orange-color;
+          @include breakpoint(small down) {
+            width: 85%;
+          }
+        }
+        .otherlinks-line-3{
+          top: 18px;
+          width: 85%;
+          border-top: 2px solid $theme-orange-color;
+          @include breakpoint(small down) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .account-section{
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+    .navUser-item--account{
+      position: relative;
+      a{
+        z-index: 1;
+      }
+      @include breakpoint(large down){
+        &:before{
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: 0 0;
+          z-index: 1;
+        }
+      }
+      &:hover{
+              @include breakpoint(large down){
+                &:before{
+                  content: none;
+                }
+              }
+        .section-sub-right{
+          display: block;
+        }
+      }
+    }
+    .section-sub-right{
+      display: none;
+      position: absolute;
+      text-align: left;
+      box-shadow: 0 5px 12px 0px rgba(0,0,0,0.1);
+      background: #ffffff;
+      left: -100px;
+      padding: 10px 20px 20px 20px;
+      top: 100%;
+      width: 200px;
+      @include breakpoint(medium down){
+        right: -25px;
+        width: 175px;
+      }
+      .navUser-item{
+        display: block;
+        width: 100%;
+        margin: 0px;
+        a{
+          text-transform: uppercase;
+          font-size: 12px;
+          display: block;
+          padding: 5px 0px;
+          line-height: 20px;
+          font-weight: 400;
+        }
+      }
+      }
+    .currency{
+      border-top: 1px solid #ededed;
+      margin-top: 10px;
+      padding-top: 10px;
+      .navUser-section{
+        width: 100%;
+        margin-bottom: 10px;
+        li{
+          margin: 0px;
+          a{
+            padding-bottom: 0px;
+            font-size: 12px;
+          }
+        }
+      }
+      .currencyOption {
+        clear: both;
+        li{
+          float: left;
+          margin-right: 5px;
+          margin-bottom: 5px;
+          a{
+            padding: 5px 10px;
+            line-height: 10px;
+            border: 1px solid $theme-border-color;
+            &:hover{
+              border: 1px solid $theme-orange-color;
+            }
+          }
+          .active{
+            border: 1px solid $theme-orange-color;
+          }
+        }
+      }
+      ul{
+        display: block !important;
+        position: inherit;
+        box-shadow: none;
+        margin: 0px;
+      }
+    }
+  }
+}
+
+.header-side-bar{
+    position: fixed;
+    right: -330px;
+    width: 320px;
+    top: 0;
+    bottom: 0;
+    z-index: 99;
+    background-color: #fff;
+    height: 100vh;
+    padding:20px 30px 30px 30px;
+    -webkit-box-shadow: 0 0 12px 2px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 0 12px 2px rgba(0,0,0,0.1);
+    box-shadow: 0 0 12px 2px rgba(0,0,0,0.1);
+    transition: all .4s cubic-bezier(.46,.01,.32,1) 0s;
+    overflow-y: auto;
+    .category{
+      margin-top: 20px;
+    }
+
+    ul{
+      li{
+        width: 100%;
+        margin-top: 12px;
+        &:hover{
+          .hitarea{
+            color: $theme-orange-color;
+          }
+        }
+      }
+    }
+    .close{
+      text-align: right;
+      margin-top: 5px;
+      a{
+        display: inline-block;
+        vertical-align: middle;
+        i{
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+    }
+    .sidebarBlock-heading{
+      margin-bottom: 5px;
+    }
+}
+
+.headerSidebarOn{
+  right: 0px;
+}
+
+/*== HEDAR STYLE END ==*/
+//
+// Mobile Menu Toggle
+//
+// 1. Animate lines from 'x' to hamburger
+// -----------------------------------------------------------------------------
+
+.mobileMenu-toggle {
+    @include square($header-toggle-width);
+    display: inline-block;
+    font-size: 0;
+    left: 0;
+    overflow: hidden;
+    padding: 0 remCalc(18);
+    position: absolute;
+    z-index: zIndex("high");
+
+    @include breakpoint("medium") {
+        display: none;
+    }
+
+    .mobileMenu-toggleIcon,
+    .mobileMenu-toggleIcon::before,
+    .mobileMenu-toggleIcon::after {
+        background: $header-font-color;
+        content: "";
+        display: block;
+        height: 2px;
+        position: absolute;
+        transform: rotate(0deg);
+        transition: transform 100ms ease-in, top 100ms ease-in 150ms, bottom 100ms ease-in 150ms; // 1
+        width: remCalc(20);
+    }
+
+    .mobileMenu-toggleIcon {
+        top: remCalc(27);
+        transition: background-color 10ms ease-in 100ms;
+    }
+
+    .mobileMenu-toggleIcon::before {
+        top: -0.5rem;
+    }
+    .mobileMenu-toggleIcon::after {
+        bottom: -0.5rem;
+    }
+    &.is-open .mobileMenu-toggleIcon {
+        background-color: transparent;
+        transition-delay: 100ms;
+
+        // scss-lint:disable NestingDepth
+        &::before,
+        &::after {
+            background-color: $header-font-color;
+            bottom: auto;
+            top: auto;
+            transition: transform 100ms ease-in 150ms, top 100ms ease-in, bottom 100ms ease-in; // Animate lines from hamburger to 'x'
+        }
+        &::before {
+            top: 0;
+            transform: rotate(45deg);
+        }
+        &::after {
+            bottom: 0;
+            transform: rotate(-45deg);
+        }
+    }
+}

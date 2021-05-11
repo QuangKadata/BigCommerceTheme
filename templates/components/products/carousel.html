@@ -1,0 +1,87 @@
+<section class="productCarousel"
+    data-slick='{
+        "dots": false,
+        "infinite": false,
+        "swipe": true,
+        "slidesToShow": 4,
+        "slidesToScroll":1,
+        "vertical": false,
+        "responsive": [
+            {
+                "breakpoint": 1440,
+                "settings": {
+                    "slidesToScroll": 1,
+                    "slidesToShow": 4
+                }
+            },
+            {
+                "breakpoint": 1279,
+                "settings": {
+                  "slidesToScroll": 1,
+                  "slidesToShow": 4
+                }
+            },
+            {
+                "breakpoint": 1023,
+                "settings": {
+                  "slidesToScroll": 1,
+                  "slidesToShow": {{#if theme_settings.layout "===" "Blue"}}3{{else}}4{{/if}}
+                }
+            },
+            {
+                "breakpoint": 769,
+                "settings": {
+                  "slidesToScroll": 2,
+                  "slidesToShow": 3,
+                  "dots": {{#if (length products) ">" 3}}true{{else}}false{{/if}},
+                  "arrows": false
+                }
+            },
+            {
+                "breakpoint": 666,
+                "settings": {
+                  "slidesToScroll": 2,
+                  "slidesToShow": 2,
+                  "draggable": true,
+                  "dots": {{#if (length products) ">" 3}}true{{else}}false{{/if}},
+                  "arrows": false
+                }
+            },
+            {
+                "breakpoint": 567,
+                "settings": {
+                  "slidesToScroll": 2,
+                  "slidesToShow": 2,
+                  "dots": {{#if (length products) ">" 2}}true{{else}}false{{/if}},
+                  "arrows": false
+                }
+            },
+            {
+                "breakpoint": 479,
+                "settings": {
+                  "slidesToScroll": 2,
+                  "slidesToShow": 2,
+                  "draggable": false,
+                  "dots": {{#if (length products) ">" 2}}true{{else}}false{{/if}},
+                  "arrows": false
+                }
+            },
+            {
+                "breakpoint": 319,
+                "settings": {
+                  "slidesToScroll": 2,
+                  "slidesToShow": 2,
+                  "draggable": false,
+                  "dots": {{#if (length products) ">" 2}}true{{else}}false{{/if}},
+                  "arrows": false
+                }
+            }
+        ]
+    }'
+>
+    {{#each products}}
+    <div class="productCarousel-slide">
+        {{> components/products/card relateditems=../relateditems theme_settings=../theme_settings customer=../customer show_rating=../settings.show_product_rating}}
+    </div>
+    {{/each}}
+</section>

@@ -1,0 +1,65 @@
+---
+brand:
+    products:
+        limit: {{theme_settings.brandpage_products_per_page}}
+---
+{{inject "brandProductsPerPage" theme_settings.brandpage_products_per_page}}
+{{#partial "head"}}
+    {{#if pagination.brand.previous}}
+        <link rel="prev" href="{{pagination.brand.previous}}">
+    {{/if}}
+    {{#if pagination.brand.next}}
+        <link rel="next" href="{{pagination.brand.next}}">
+    {{/if}}
+{{/partial}}
+
+{{#partial "page"}}
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+
+{{{snippet 'brand'}}}
+<div class="page">
+    <aside class="page-sidebar">
+      {{#if brand.image}}
+          <div class="side-bar-img m-b-20 padding-5 align-center">
+              <img src="{{getImage brand.image 'thumb_size'}}">
+          </div>
+      {{/if}}
+      <div id="faceted-search-container">
+          {{> components/brand/sidebar}}
+      </div>
+    </aside>
+
+    <main class="page-content" >
+      <div class="page-top-bar m-b-20 clearfix">
+          <h1 class="page-heading">{{brand.name}}</h1>
+      </div>
+
+      {{#if banners.top}}
+      <div class="banners banner-with-border m-b-30" data-banner-location="top">
+          <div class="banner">
+              {{{limit banners.top 1}}}
+          </div>
+      </div>
+      {{/if}}
+
+      <div id="product-listing-container">
+        {{#if brand.products}}
+            {{> components/brand/product-listing}}
+        {{else}}
+            <p>{{lang 'brands.no_products'}}</p>
+        {{/if}}
+      </div>
+
+      {{#if banners.bottom}}
+      <div class="banners p-t-20 m-t-30" data-banner-location="bottom">
+          <div class="banner">
+              {{{limit banners.bottom 1}}}
+          </div>
+      </div>
+      {{/if}}
+
+    </main>
+</div>
+
+{{/partial}}
+{{> layout/base}}

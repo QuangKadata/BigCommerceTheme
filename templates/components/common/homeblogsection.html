@@ -1,0 +1,29 @@
+{{#and blog.recent_posts (if theme_settings.HomeBlogStyle '!==' 'none')}}
+<div class="home-blog-post m-b-50">
+    <div class="section-title">
+        <h2 class="page-heading">{{lang 'blog.blog-heading' }}</h2>
+        {{#if theme_settings.BlogSubTitle}}
+          <p class="section-sub-title">{{theme_settings.BlogSubTitle}}</p>
+        {{/if}}
+    </div>
+    <div class="home-blog-list-wrap clearfix">
+        <div class="custom-row">
+          {{#if theme_settings.HomeBlogStyle "==" "HomeBlogStyle1"}}
+            {{#each blog.recent_posts}}
+            {{#if @index '<' 3}}
+              {{> components/blog/HomePagePost blog=blog.recent_posts columns=3 settings=../settings}}
+              {{/if}}
+            {{/each}}
+          {{/if}}
+
+          {{#if theme_settings.HomeBlogStyle "==" "HomeBlogStyle2"}}
+            {{#each blog.recent_posts}}
+              {{#if @index '<' 2}}
+                {{> components/blog/HomePagePost1 blog=blog.recent_posts columns=2 settings=../settings}}
+              {{/if}}
+            {{/each}}
+          {{/if}}
+        </div>
+    </div>
+  </div>
+{{/and}}

@@ -1,0 +1,17 @@
+{{#if theme_settings.EnablePencilBanner}}
+  {{#or theme_settings.Pencilbannercontain theme_settings.Pencilbannercontain }}
+    <div class="pencil-banner">
+      <div class="container">
+        {{#if theme_settings.Pencilbannercontain}}
+        <span class="banner-contain">{{theme_settings.Pencilbannercontain}} &nbsp;
+          {{#and theme_settings.Pencilbannershopbutton theme_settings.PencilbannershopUrl}}
+          <a href="{{theme_settings.PencilbannershopUrl}}">{{theme_settings.Pencilbannershopbutton}}</a>
+          {{/and}}
+        {{/if}}
+        </span>
+        <a class="control-close-btn blue-close" href="javascript:void(0);"><i class="icon-close"></i></a>
+      </div>
+      <a class="control-close-btn default-close" href="javascript:void(0);"><i class="icon-close"></i></a>
+  </div>
+  {{/or}}
+{{/if}}

@@ -1,0 +1,51 @@
+{{#or product.description product.warranty product.videos.list.length product.reviews.total}}
+<div id="Product-descrTabs">
+  <ul class="tabs clearfix">
+    {{#if product.description}}
+    <li class="tab is-active">
+      <a class="tab-title" href="#tab-description">{{lang 'products.description'}}</a>
+    </li>
+    {{/if}}
+    {{#if product.warranty}}
+    <li class="tab">
+      <a class="tab-title" href="#tab-warranty">{{lang 'products.warranty'}}</a>
+    </li>
+    {{/if}}
+    {{#if product.videos.list.length}}
+    <li class="tab">
+      <a class="tab-title" href="#tab-video">{{lang 'products.videos.header'}}</a>
+    </li>
+    {{/if}}
+    {{#if settings.show_product_reviews}}
+    {{#if product.reviews.total}}
+    <li class="tab">
+      <a class="tab-title" href="#tab-reviews">{{lang 'products.reviews.r_title'}}</a>
+    </li>
+    {{/if}}
+    {{/if}}
+  </ul>
+  {{#if product.description}}
+  <div class="tab-content" id="tab-description">
+    {{{product.description}}}
+    {{{snippet 'product_description'}}}
+  </div>
+  {{/if}}
+  {{#if product.warranty}}
+  <div class="tab-content" id="tab-warranty">
+    {{{product.warranty}}}
+  </div>
+  {{/if}}
+  {{#if product.videos.list.length}}
+  <div class="tab-content" id="tab-video">
+    {{> components/products/videos product.videos}}
+  </div>
+  {{/if}}
+  {{#if settings.show_product_reviews}}
+  {{#if product.reviews.total}}
+  <div class="tab-content" id="tab-reviews">
+    {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
+  </div>
+  {{/if}}
+  {{/if}}
+</div>
+{{/or}}

@@ -1,0 +1,161 @@
+// =============================================================================
+// COMPARE (CSS)
+// =============================================================================
+
+
+// Compare table layout
+// -----------------------------------------------------------------------------
+//
+// 1. Foundation Magellan plugin.
+//
+// -----------------------------------------------------------------------------
+
+.compareTable {
+    // border-top: container("border");
+    table-layout: fixed;
+    width: 100%;
+}
+
+.compare-table-wrap{
+  overflow: auto;
+  @include breakpoint(medium down){
+    .compareTable{
+      width: 800px;
+    }
+  }
+
+}
+
+.compareTable-row {
+    vertical-align: top;
+
+    + .compareTable-row {
+
+        // scss-lint:disable NestingDepth
+        .compareTable-heading,
+        .compareTable-item {
+            border-top: 1px solid $theme-border-color;
+        }
+
+        .compareTable-heading:empty {
+            border-top: 0;
+        }
+    }
+}
+
+
+// Compare table headings
+// -----------------------------------------------------------------------------
+
+.compareTable-heading {
+    font-family: fontFamily("headingSans");
+    font-size: fontSize("smaller");
+    font-weight: fontWeight("normal");
+    padding: (spacing("base") + spacing("sixth")) spacing("base");
+    position: relative;
+    text-align: right;
+    width: 0;
+
+    @include breakpoint("large") {
+        width: grid-calc(2, $total-columns);
+        padding: (spacing("base") + spacing("sixth")) spacing("base");
+    }
+}
+
+.compareTable-headingText {
+    position: absolute;
+    top: spacing("base") + spacing("sixth");
+    white-space: nowrap;
+
+    @include breakpoint("medium") {
+        position: inherit;
+        top: inherit;
+    }
+}
+
+
+// Compare table item
+// -----------------------------------------------------------------------------
+
+.compareTable-item {
+    padding: (spacing("double") + spacing("sixth")) spacing("base") (spacing("base") + spacing("sixth"));
+
+    @include breakpoint("large") {
+        padding-top: spacing("base") + spacing("sixth");
+    }
+}
+
+
+// Remove product
+// -----------------------------------------------------------------------------
+
+.compareTable-removeProduct {
+    background-color: container("fill", "dark");
+    border-radius: 50%;
+    height: 30px;
+    position: absolute;
+    right: -(spacing("base"));
+    top: -(spacing("base"));
+    transition: background-color 0.15s ease;
+    width: 30px;
+
+    .icon {
+        fill: $theme-white-color;
+        height: 20px;
+        margin-top: 5px;;
+        width: 20px;
+    }
+    &:hover{
+      background: $theme-primary-color;
+      .icon {
+          fill: $theme-white-color;
+      }
+    }
+}
+
+
+// Compare product card
+// -----------------------------------------------------------------------------
+
+.compareTable-product {
+    font-weight: fontWeight("normal");
+    // padding: (spacing("single") + spacing("third")) spacing("base") (spacing("base") + spacing("sixth"));
+    padding: 10px;
+
+    .card {
+        margin-bottom: 0;
+        padding: 10px;
+        height: auto !important;
+        &:hover{
+          .card-price{
+            .price-section{
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+        .card-image-custom{
+          max-height: 200px;
+        }
+    }
+
+    .card-body {
+        min-height: spacing("single") * 4;
+        padding-top: spacing("base");
+    }
+}
+
+
+// Compare action
+// -----------------------------------------------------------------------------
+
+.compareTable-action {
+    padding: 0 spacing("base") spacing("base");
+
+    .button {
+        display: block;
+        padding-left: spacing("half");
+        padding-right: spacing("half");
+        width: 100%;
+    }
+}

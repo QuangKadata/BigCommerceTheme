@@ -1,0 +1,339 @@
+// =============================================================================
+// PRODUCT VIEW (CSS)
+// =============================================================================
+
+
+// Product view layout
+// -----------------------------------------------------------------------------
+
+.productView-section{
+  @include grid-row($behavior: "nest");
+  margin-left: -(spacing("base"));
+  margin-right: -(spacing("base"));
+  .modal & {
+      padding-bottom: 0;
+      padding-top: 0;
+  }
+}
+.quickView{
+  .product-view-wrap{
+    width: 100%;
+  }
+  .product-side-bar{
+    display: none;
+  }
+}
+.product-view-wrap{
+  width: 79%;
+  float: left;
+  @include breakpoint(xlarge down){
+    width: 75%;
+  }
+  @include breakpoint(large down){
+    width: 70%;
+  }
+  @include breakpoint(medium down){
+    width: 100%;
+  }
+}
+.product-side-bar{
+  width: 21%;
+  float: right;
+  padding-left: 1rem;
+  padding-right:1rem;
+  @include breakpoint(xlarge down){
+    width: 25%;
+  }
+  @include breakpoint(large down){
+    width: 30%;
+  }
+  @include breakpoint(medium down){
+    width: 100%;
+  }
+}
+
+.type-product.milano-layout--Blue{
+  .usp-section{
+    @include breakpoint(medium down) {
+      display: none;
+    }
+  }
+}
+
+.usp-section{
+  margin: 0px;
+  border: 1px solid $theme-border-color;
+  padding: 0 10px;
+    @include breakpoint(medium down) {
+      padding: 0px;
+    }
+  .container{
+    width: auto;
+    @include breakpoint(medium down) {
+        width: 728px;
+    }
+    @include breakpoint(mob-large down) {
+        width: 94%;
+    }
+    @include breakpoint(mob-mid down) {
+        width: 92%;
+    }
+    @include breakpoint(mob-small down) {
+        width: 91%;
+    }
+    @include breakpoint(small down) {
+        width: 88%;
+    }
+  }
+  @include breakpoint(medium down){
+    display: none;
+  }
+  .service-wrap{
+    margin: 0px;
+  }
+  .custom-row{
+    margin: 0px;
+  }
+  .column{
+    width: 100%;
+    float: none;
+    padding: 0px;
+    list-style: none;
+    border-top: 1px solid $theme-border-color;
+      @include breakpoint(medium down){
+        border: 0px;
+        width: 25%;
+        float: left;
+      }
+      @include breakpoint(mob-large down){
+        width: 50%;
+      }
+    &:first-child{
+      border-top: 0px;
+    }
+    .service-banner-item{
+      text-align: left;
+      padding: 13px 10px;
+      justify-content: left;
+      align-items: left;
+      display: flex;
+    }
+    .service-banner-img{
+      float: none !important;
+      display: inline-block;
+      vertical-align: middle;
+      width: 14% !important;
+        @include breakpoint(medium down){
+          width: 100% !important;
+        }
+      .service-banner-img-inn{
+        width: 35px;
+        height: 35px;
+        margin: 0 auto;
+      }
+    }
+    .service-banner-detail{
+      display: inline-block;
+      vertical-align: middle;
+        @include breakpoint(mob-large down){
+          display: block !important;
+        }
+    }
+    h4{
+      font-size: 16px;
+      margin-bottom: 0px !important;
+      line-height: 22px;
+    }
+    span{
+      font-size: 12px;
+    }
+  }
+  .service-banner-item{
+    height: auto !important;
+  }
+}
+.productView--quickView {
+    .socialLinks-item--print {
+        display: none;
+    }
+    .productView-description{
+      display: none;
+    }
+}
+
+.milano-layout--Blue{
+  .productView-images{
+    .slick-prev, .slick-next{
+      top: 50%;
+      @include breakpoint(small down) {
+        width: 20px;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.productView-images {
+    @include grid-column(12);
+    padding-left: spacing("base");
+    padding-right: spacing("base");
+
+    @include breakpoint("medium") {
+        width: grid-calc(6, $total-columns);
+    }
+    @include breakpoint(mob-large down) {
+        margin-bottom: 20px;
+    }
+    .slick-prev{
+      left: 0;
+      right: auto;
+      top: 50%;
+      font-size: 22px;
+      @include breakpoint(small down) {
+        left: 5px;
+      }
+      &:before{
+        content: "\e979";
+          @include breakpoint(small down) {
+            font-size: 22px;
+          }
+      }
+    }
+    .slick-next{
+      top: 50%;
+      right: 0;
+      left: auto;
+      font-size: 22px;
+      @include breakpoint(small down) {
+        right: 12px;
+      }
+      &:before{
+        content: "\e97a";
+        @include breakpoint(small down) {
+          font-size: 22px;
+        }
+      }
+    }
+
+    .slick-list{
+      margin-left: 2.85714rem;
+      margin-right: 2.85714rem;
+    }
+    .productView-thumbnails {
+      li{
+        float: left;
+        padding-left: (spacing("quarter"));
+        padding-right: (spacing("quarter"));
+        width: 12.5%;
+        @include breakpoint("xlarge") {
+            width: 12.5%;
+        }
+        @include breakpoint(large down) {
+            width: 20%;
+        }
+        @include breakpoint(mob-large down) {
+            width: 14.28%;
+        }
+        @include breakpoint(mob-small down) {
+            width: 20%;
+        }
+        @include breakpoint(small down) {
+            width: 25%;
+        }
+        a{
+          width: auto;
+          display: table-cell;
+          height: 67px;
+          width: 75px;
+          vertical-align: middle;
+          @include breakpoint(xlarge down) {
+              height: 70px;
+          }
+          @include breakpoint(large down) {
+              height: 50px;
+          }
+          @include breakpoint(mob-large down) {
+              height: 90px;
+          }
+          @include breakpoint(mob-mid down) {
+              height: 70px;
+          }
+          @include breakpoint(mob-small down) {
+              height: 60px;
+          }
+        }
+      }
+    }
+}
+
+.productView-details {
+    @include grid-column(12);
+    padding-left: spacing("base");
+    padding-right: spacing("base");
+
+    @include breakpoint("medium") {
+        clear: right;
+        float: right;
+        width: grid-calc(6, $total-columns);
+    }
+}
+
+.productView-description {
+    @include grid-column(12);
+    padding-left: spacing("base");
+    padding-right: spacing("base");
+    @include breakpoint("medium") {
+        clear: both;
+        width: 100%;
+    }
+}
+.tab.r-tabs-tab{
+  border-right: 1px solid $theme-white-color;
+  .tab-title{
+    background: transparent;
+    color: $theme-black-color;
+    &:hover{
+      background: $theme-orange-color;
+      color: $theme-white-color;
+    }
+  }
+}
+.tab.r-tabs-tab.r-tabs-state-active{
+  .tab-title{
+    background: $theme-orange-color;
+    color: $theme-white-color;
+  }
+}
+
+.videoGallery{
+  .videoGallery-main{
+    margin: 0px;
+    @include breakpoint(medium down){
+      margin-bottom: 15px;
+    }
+  }
+  .videoGallery-list{
+    .videoGallery-item{
+      width: 100%;
+    }
+  }
+}
+
+.toggle-title{
+  .is-open{
+    + .toggleLink{
+      .toggleLink-text--off{
+        display: none;
+      }
+      .toggleLink-text--on{
+        display: inline-block;
+      }
+    }
+  }
+}
+.toggle{
+  border: none;
+  &:last-child{
+    margin: 0px;
+  }
+}

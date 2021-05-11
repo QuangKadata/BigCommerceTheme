@@ -1,0 +1,16 @@
+<div class="category-filter-block clearfix m-b-10">
+  {{> components/common/paginator pagination.category}}
+  <div class="float-right">
+    {{> components/products/filter sort=pagination.category.sort}}
+  </div>
+</div>
+<div class="product-view-mode">
+  <form action="{{urls.compare}}" method='POST' data-product-compare>
+      {{#if theme_settings.product_list_display_mode '===' 'grid'}}
+          {{> components/products/grid products=category.products show_compare=category.show_compare theme_settings=theme_settings}}
+      {{else}}
+          {{> components/products/list products=category.products show_compare=category.show_compare theme_settings=theme_settings}}
+      {{/if}}
+  </form>
+</div>
+{{> components/common/paginator pagination.category}}

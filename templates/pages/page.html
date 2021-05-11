@@ -1,0 +1,40 @@
+{{#partial "page"}}
+
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+
+<main class="page">
+
+  <div class="section-title">
+      <h1 class="page-heading">{{ page.title }}</h1>
+  </div>
+
+  {{#if page.sub_pages}}
+  <aside class="page-sidebar">
+    {{> components/common/page-sidebar-block}}
+  </aside>
+  {{/if}}
+
+  <main class="page-content">
+      {{#replace '%%Syndicate%%' page.content}}
+          {{> components/page/rss_feed}}
+      {{else}}
+          <p>{{{page.content}}}</p>
+      {{/replace}}
+  </main>
+
+    {{#if page.feed}}
+        <ul>
+            {{#each page.feed}}
+                <li>
+                    <h6><a href="{{url}}" target="_blank">{{title}}</a></h6>
+                    <p>{{content}}</p>
+                </li>
+            {{/each}}
+        </ul>
+    {{/if}}
+    
+</main>
+
+{{/partial}}
+
+{{> layout/base}}

@@ -1,0 +1,80 @@
+---
+category:
+    shop_by_price: true
+    products:
+        limit: {{theme_settings.categorypage_products_per_page}}
+---
+{{inject "categoryProductsPerPage" theme_settings.categorypage_products_per_page}}
+{{#partial "head"}}
+    {{#if pagination.category.previous}}
+        <link rel="prev" href="{{pagination.category.previous}}">
+    {{/if}}
+    {{#if pagination.category.next}}
+        <link rel="next" href="{{pagination.category.next}}">
+    {{/if}}
+{{/partial}}
+
+
+
+{{#partial "page"}}
+
+{{{snippet 'categories'}}}
+
+  {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+
+  <div class="page">
+      {{#or category.subcategories category.faceted_search_enabled category.shop_by_price}}
+          <aside class="page-sidebar" id="faceted-search-container">
+              {{> components/category/sidebar}}
+          </aside>
+      {{/or}}
+
+      <main class="page-content">
+
+          <div class="page-top-bar m-b-20 clearfix">
+            {{#if category.name}}
+              <h1 class="page-heading">{{category.name}}</h1>
+              {{else}}
+              <h1 class="page-heading">all products</h1>
+            {{/if}}
+          </div>
+
+          {{#if banners.top}}
+            <div class="banners banner-with-border m-b-30" data-banner-location="top">
+                <div class="banner">
+                    {{{limit banners.top 1}}}
+                </div>
+            </div>
+          {{/if}}
+
+          {{#if category.description}}
+            <div class="category-top-bar banner-with-bag m-b-30">
+                <div class="category-top-bar-inner clearfix">
+                  {{{category.description}}}
+                </div>
+            </div>
+          {{/if}}
+
+          {{> components/category/sub-category-block}}
+
+         <div id="product-listing-container">
+            {{#if category.products}}
+                {{> components/category/product-listing}}
+            {{else}}
+                <p>{{lang 'categories.no_products'}}</p>
+            {{/if}}
+         </div>
+
+          {{#if banners.bottom}}
+          <div class="banners p-t-20 m-t-30" data-banner-location="bottom">
+              <div class="banner">
+                  {{{limit banners.bottom 1}}}
+              </div>
+          </div>
+          {{/if}}
+      </main>
+  </div>
+
+
+{{/partial}}
+{{> layout/base}}

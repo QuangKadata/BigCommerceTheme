@@ -1,0 +1,26 @@
+
+    <ul class="navPage-subMenu-list nav-list-alt">
+        {{#each children}}
+            <li class="navPage-subMenu-item-child">
+              <!-- SECOND LEVEL STARTS -->
+              {{#if children}}
+              <a href="{{url}}" class="needsclick">
+                  {{name}}
+                  <span class="icon-arrow-1-right"></span>
+              </a>
+              <ul class="navlist-sub nav-second-level">
+                  {{#each children}}
+                  <li>
+                    <a href="{{url}}" class="needsclick">
+                        {{name}}</span>
+                    </a>
+                  </li>
+                  {{/each}}
+              </ul>
+              {{else}}
+              <a href="{{url}}">{{name}}</a>
+              {{/if}}
+              <!-- SECOND LEVEL ENDS -->
+            </li>
+        {{/each}}
+    </ul>

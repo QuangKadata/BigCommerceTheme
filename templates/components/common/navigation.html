@@ -1,0 +1,83 @@
+<nav class="navUser">
+    <ul class="navUser-section navUser-section--alt account-section sf-menu">
+      {{> components/common/header-account-menu}}
+
+      {{#if theme_settings.EnableProductCompare}}
+      <li class="navUser-item navUser-item-compare">
+          <a class="navUser-action navUser-item--compare needsclick" href="{{urls.compare}}" data-compare-nav>
+            <i class="icon-shuffle"></i>
+            <span class="countPill countPill--positive countPill--alt"></span>
+          </a>
+      </li>
+      {{/if}}
+
+
+      <li class="navUser-item navUser-item--cart">
+          <a  class="navUser-action"
+              data-cart-preview
+              data-dropdown="cart-preview-dropdown"
+              data-options="align:right"
+              href="{{urls.cart}}">
+              <span class="navUser-item-cartLabel"><i class="icon-shopping-bag"></i></span> <span class="countPill{{#if cart.items}} countPill--positive{{/if}} cart-quantity">{{cart.quantity}}</span>
+          </a>
+          <div class="dropdown-menu" id="cart-preview-dropdown" data-dropdown-content aria-hidden="true"></div>
+      </li>
+      <li class="navUser-item">
+          <a class="navUser-action navUser-action--quickSearch" href="javascript:void(0);" data-search="quickSearch" aria-controls="quickSearch" aria-expanded="false"><i class="icon-magnifier-1"></i></a>
+          <div class="dropdown dropdown--quickSearch" id="quickSearch" aria-hidden="true" tabindex="-1" data-prevent-quick-search-close>
+              {{> components/common/quick-search headerSearch='headerSearch'}}
+          </div>
+      </li>
+      <li class="navUser-item desktop_mobile_menu">
+        <a class="control-otherlinks" href="javascript:void(0);" onclick="">
+          <span class="otherlinks-line-1"></span>
+          <span class="otherlinks-line-2"></span>
+          <span class="otherlinks-line-3"></span>
+        </a>
+      </li>
+    </ul>
+
+</nav>
+
+<div id="headerSidebar" class="header-side-bar">
+
+  <div class="close">
+    <a class="close-icon" href="javascript:void(0);"><i class="icon-close"></i></a>
+  </div>
+
+  <div class="category">
+    <h5 class="sidebarBlock-heading">{{lang 'footer.categories'}}</h5>
+    <ul class="navList navList-treeview">
+        {{#each categories}}
+            <li class="navPages-item">
+              {{> components/common/navigation-list}}
+            </li>
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class="webpages m-t-30">
+    <h5 class="sidebarBlock-heading">{{lang 'footer.navigate'}}</h5>
+    <ul class="navList navList-treeview">
+      {{#each pages}}
+           <li class="navPages-item navPages-item-page">
+             {{> components/common/navigation-list}}
+           </li>
+       {{/each}}
+    </ul>
+  </div>
+
+  <div class="brand m-t-30">
+    <h5 class="sidebarBlock-heading">{{lang 'footer.brands'}}</h5>
+    <ul class="navList navList-treeview">
+      {{#each shop_by_brand}}
+          {{#if @index '<' '5' }}
+            <li>
+                <a href="{{url}}">{{name}}</a>
+            </li>
+          {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+
+</div>

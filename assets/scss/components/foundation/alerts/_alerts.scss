@@ -1,0 +1,127 @@
+// =============================================================================
+// ALERTS
+// =============================================================================
+
+.alertBox {
+    color: stencilColor("alert-color");
+    margin-bottom: 20px;
+}
+.type-default {
+  .alertBox {
+  @include breakpoint(medium down){
+    margin-top: 20px;
+  }
+}
+}
+
+.alertBox-icon {
+    .icon {
+        @include square(25px);
+    }
+}
+
+.alertBox--info {
+    color: stencilColor("alert-color-alt");
+
+    .alertBox-close {
+
+        // scss-lint:disable SelectorDepth, NestingDepth
+        svg {
+            fill: $theme-white-color;
+        }
+    }
+}
+
+
+// =============================================================================
+// ALERTS
+// =============================================================================
+
+.alertBox {
+    border-radius: $alert-radius;
+    color: stencilColor("alert-color");
+    background: #00C976;
+    margin-bottom: 30px;
+    @include breakpoint(small down){
+      margin-bottom: 15px;
+    }
+    .alertBox-message{
+      @include breakpoint(mob-mid down){
+        line-height: 18px;
+      }
+    }
+}
+
+
+
+
+.alertBox-icon {
+    .icon {
+        @include square(25px);
+    }
+}
+
+.alertBox--info {
+    color: stencilColor("alert-color-alt");
+    background:#77d3e0;
+
+    svg {
+        fill: $theme-white-color;
+    }
+
+    .alertBox-close {
+
+        // scss-lint:disable SelectorDepth, NestingDepth
+        svg {
+            fill: $theme-white-color;
+        }
+    }
+}
+
+.alertBox--error {
+    margin: 0 0px 25px;
+    background: #e47c68;
+    color: stencilColor("alert-color-alt");
+    *{
+      color:$theme-white-color;
+      fill:$theme-white-color;
+    }
+}
+.alertBox--error svg{
+  fill:$theme-white-color;
+}
+.alertBox--success{
+  background:#4cbe83;
+  color: stencilColor("alert-color-alt");
+  *{
+    color:$theme-white-color;
+    fill:$theme-white-color;
+  }
+}
+
+.alertBox--notice{
+  background:#77d3e0;
+  color: stencilColor("alert-color-alt");
+  *{
+    color:$theme-white-color;
+    fill:$theme-white-color;
+  }
+}
+
+.alertBox--warning{
+  background:#feb742;
+  color: stencilColor("alert-color-alt");
+  *{
+    color:$theme-white-color;
+    fill:$theme-white-color;
+  }
+}
+
+.alertBox--storeCredit{
+  background:#77d3e0;
+  color: stencilColor("alert-color-alt");
+  *{
+    color:$theme-white-color;
+    fill:$theme-white-color;
+  }
+}

@@ -1,0 +1,8 @@
+{{#for 1 5}}
+    {{#if ../this.rating '>=' $index}}
+          <i class="icon-star1" aria-hidden="true"></i>
+    {{else}}
+          <i class="icon-star" aria-hidden="true"></i>
+    {{/if}}
+{{/for}}
+{{{snippet 'product_rating'}}}
