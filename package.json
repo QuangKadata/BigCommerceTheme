@@ -25,7 +25,7 @@
     "lazysizes": "3.0.0",
     "lodash": "^4.17.4",
     "nod-validate": "^2.0.12",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "pace": "hubspot/pace#a03f1f1de62c9cea6c88b2267b8d7a83858b6cb6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
